@@ -23,22 +23,47 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 # Steps
 
-1. Install z/OS Connect
+1.  Install z/OS Connect
 
-   -
+    -
 
-2. Create a z/OS Connect Project
+2.  Create a z/OS Connect Project
 
-3. Create the DB2 database and tables
+    - Open the Eclipse tool (IBM® Explorer for z/OS Aqua) in which you installed the z/OS Connect EE API Editor.
 
-4. Populate DB2 database with Synthea data
+    * Switch to the z/OS Connect Enterprise Edition perspective.
 
-5. Expose DB2 data through z/OS Connect
+      - From menu bar, select **Window > Open Perspective > Other**
 
-6. Create CICS Application
+      - In the list of perspectives, select **z/OS Connect Enterprise Edition** and click **OK**.
 
-7. Expose CICS Application data through z/OS Connect
+      You are now in the **z/OS Connect Enterprise Edition** perspective, with related views and resources readily available.
 
-8. Create API Connect Instance
+    * Create an API project.
 
-9. Connect z/OS Connect REST APIs to API Connect
+      - From the menu bar, select **File > New > z/OS Connect EE API Project**. The z/OS Connect EE API Project wizard opens.
+
+      - Enter the project properties below, then click **Finish**.
+
+    | **Project property** |                                                                           **Description**                                                                            |                 **Sample Value to specify**                 |
+    | :------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------: |
+    |     Project name     |                                        Unique alphanumeric name for your project. This is the name of the project in Eclipse.                                        | SummitHealth <span style="color:red"> Ask Kenishia </span>. |
+    |       API name       |                                   The name of your API. This is the name by which the z/OS Connect EE server knows about this API.                                   |       <span style="color:red"> Ask Kenishia </span>.        |
+    |      Base path       | The unique basePath attribute that specifies the root of all the resources in this API. This path is used by REST clients in the URI they send in to invoke the API. |        <span style="color:red"> Ask Kenishia </span>        |
+    |     Description      |                                           Optional field to provide a description of this API for documentation purposes.                                            |        <span style="color:red"> Ask Kenishia </span>        |
+
+    - [Source](https://www.ibm.com/support/knowledgecenter/en/SS4SVW_2.0.0/com.ibm.zosconnect.doc/scenarios/ims_create_api.html)
+
+3.  Create the DB2 database and tables
+
+4.  Populate DB2 database with Synthea data
+
+5.  Expose DB2 data through z/OS Connect
+
+6.  Create CICS Application
+
+7.  Expose CICS Application data through z/OS Connect
+
+8.  Create API Connect Instance
+
+9.  Connect z/OS Connect REST APIs to API Connect
