@@ -84,6 +84,8 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
       - Click on the API Connect card.
 
-      - Name the service. Choose a location to deploy in (Choose the locatino closest to you). Leave the organization and space at the defaults.
+      - Name the service. Choose a location to deploy in (Choose the locatino closest to you). Leave the organization and space at the defaults. Scroll down and select the **"Lite"** plan. The click the **Create** button.
 
-9.  Connect z/OS Connect REST APIs to API Connect
+      ![Creating an API Connect Instance](doc/source/images/CreatAPIConnectInstance.gif)
+
+9)  Connect z/OS Connect REST APIs to API Connect
