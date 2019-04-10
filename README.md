@@ -58,6 +58,8 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 4.  Populate DB2 database with Synthea data
 
+    - Visit this [code pattern](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/) for the instructions on populating your DB2 database with data from the Synthea tool
+
 5.  Expose DB2 data through z/OS Connect
 
 6.  Create CICS Application
@@ -65,5 +67,23 @@ This is how your APIs will be routed from your backend systems to a developer fr
 7.  Expose CICS Application data through z/OS Connect
 
 8.  Create API Connect Instance
+
+    - Create an IBM Cloud Account
+
+      - [Click here](https://cloud.ibm.com/registration) to go to the IBM Cloud registration page.
+
+      - Enter your email, first name, last name, Country or Region, and the password you would like to use.
+
+        ![IBM Cloud Create Account](doc/source/images/IBMCloudCreateAccount.gif)
+
+    - Create an API Connect Instance
+
+      - From the IBM Cloud Dashboard, click on **Catalog**.
+
+      - In the search bar tyep **"API Connect"** and hit **enter**.
+
+      - Click on the API Connect card.
+
+      - Name the service. Choose a location to deploy in (Choose the locatino closest to you). Leave the organization and space at the defaults.
 
 9.  Connect z/OS Connect REST APIs to API Connect
