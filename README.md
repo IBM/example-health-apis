@@ -25,7 +25,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 1.  Install z/OS Connect
 
-    - Please refer to this [PDF](doc/source/zOS Connect EE V3 Getting Started.pdf) on how to install z/OS Connect. Go to page 8 for information on installation.
+    - Please refer to this [PDF](./doc/source/zOS Connect EE V3 Getting Started.pdf) on how to install z/OS Connect. Go to page 8 for information on installation.
 
 2.  Create a z/OS Connect Project
 
