@@ -87,17 +87,39 @@ This is how your APIs will be routed from your backend systems to a developer fr
      |   ALLERGIES   |                                                   List of any allergies a patient has and when they were                                                   |
      | OBSERVATIONS  | Log of patient measurements (such as height and weight), lab results (like cholesterol and blood sugar) and questionnaire answers (such as smoking status) |
 
-4. Populate DB2 database with Synthea data
+   - Seven (7) of the tables are used in the Web Interface:
+
+     - PATIENT
+
+     - USER
+
+     - MEDICATION
+
+     - PRESCRIPTION
+
+     - APPOINTMENTS
+
+     - ALLERGIES
+
+     - OBSERVATIONS
+
+   - Create the tables for the functions that will be implemented in the Healthcare system.
+
+     - The tables should be created in the table space that was defined to contain the Healthcare tables
+
+     - Once the database and tables are created, a BIND needs to take place to connect the CICS application and the database.
+
+4) Populate DB2 database with Synthea data
 
    - Visit this [code pattern](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/) for the instructions on populating your DB2 database with data from the Synthea tool
 
-5. Expose DB2 data through z/OS Connect
+5) Expose DB2 data through z/OS Connect
 
-6. Create CICS Application
+6) Create CICS Application
 
-7. Expose CICS Application data through z/OS Connect
+7) Expose CICS Application data through z/OS Connect
 
-8. Create API Connect Instance
+8) Create API Connect Instance
 
    - Create an IBM Cloud Account
 
@@ -119,4 +141,4 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
      ![Creating an API Connect Instance](doc/source/images/CreatAPIConnectInstance.gif)
 
-9. Connect z/OS Connect REST APIs to API Connect
+9) Connect z/OS Connect REST APIs to API Connect
