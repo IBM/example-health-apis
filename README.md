@@ -23,69 +23,100 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 # Steps
 
-1.  Install z/OS Connect
+1. Install z/OS Connect
 
-    - Please refer to this [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf) on how to install z/OS Connect. Go to page 8 for information on installation.
+   - Please refer to this [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf) on how to install z/OS Connect. Go to page 8 for information on installation.
 
-2.  Create a z/OS Connect Project
+2. Create a z/OS Connect Project
 
-    - Open the Eclipse tool (IBM® Explorer for z/OS Aqua) in which you installed the z/OS Connect EE API Editor.
+   - Open the Eclipse tool (IBM® Explorer for z/OS Aqua) in which you installed the z/OS Connect EE API Editor.
 
-    * Switch to the z/OS Connect Enterprise Edition perspective.
+   - Switch to the z/OS Connect Enterprise Edition perspective.
 
-      - From menu bar, select **Window > Open Perspective > Other**
+     - From menu bar, select **Window > Open Perspective > Other**
 
-      - In the list of perspectives, select **z/OS Connect Enterprise Edition** and click **OK**.
+     - In the list of perspectives, select **z/OS Connect Enterprise Edition** and click **OK**.
 
-      You are now in the **z/OS Connect Enterprise Edition** perspective, with related views and resources readily available.
+     You are now in the **z/OS Connect Enterprise Edition** perspective, with related views and resources readily available.
 
-    * Create an API project.
+   - Create an API project.
 
-      - From the menu bar, select **File > New > z/OS Connect EE API Project**. The z/OS Connect EE API Project wizard opens.
+   - From the menu bar, select **File > New > z/OS Connect EE API Project**. The z/OS Connect EE API Project wizard opens.
 
-      - Enter the project properties below, then click **Finish**.
+     - Enter the project properties below, then click **Finish**.
 
-    | **Project property** |                                                                           **Description**                                                                            |                 **Sample Value to specify**                 |
-    | :------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------: |
-    |     Project name     |                                        Unique alphanumeric name for your project. This is the name of the project in Eclipse.                                        | SummitHealth <span style="color:red"> Ask Kenishia </span>. |
-    |       API name       |                                   The name of your API. This is the name by which the z/OS Connect EE server knows about this API.                                   |       <span style="color:red"> Ask Kenishia </span>.        |
-    |      Base path       | The unique basePath attribute that specifies the root of all the resources in this API. This path is used by REST clients in the URI they send in to invoke the API. |        <span style="color:red"> Ask Kenishia </span>        |
-    |     Description      |                                           Optional field to provide a description of this API for documentation purposes.                                            |        <span style="color:red"> Ask Kenishia </span>        |
+   | **Project property** |                                                                           **Description**                                                                            |                 **Sample Value to specify**                 |
+   | :------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------: |
+   |     Project name     |                                        Unique alphanumeric name for your project. This is the name of the project in Eclipse.                                        | SummitHealth <span style="color:red"> Ask Kenishia </span>. |
+   |       API name       |                                   The name of your API. This is the name by which the z/OS Connect EE server knows about this API.                                   |       <span style="color:red"> Ask Kenishia </span>.        |
+   |      Base path       | The unique basePath attribute that specifies the root of all the resources in this API. This path is used by REST clients in the URI they send in to invoke the API. |        <span style="color:red"> Ask Kenishia </span>        |
+   |     Description      |                                           Optional field to provide a description of this API for documentation purposes.                                            |        <span style="color:red"> Ask Kenishia </span>        |
 
-    - [Source](https://www.ibm.com/support/knowledgecenter/en/SS4SVW_2.0.0/com.ibm.zosconnect.doc/scenarios/ims_create_api.html)
+   - [Source](https://www.ibm.com/support/knowledgecenter/en/SS4SVW_2.0.0/com.ibm.zosconnect.doc/scenarios/ims_create_api.html)
 
-3.  Create the DB2 database and tables
+3. Create the DB2 database and tables
 
-4.  Populate DB2 database with Synthea data
+   - Assumptions/Prerequisites
 
-    - Visit this [code pattern](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/) for the instructions on populating your DB2 database with data from the Synthea tool
+     - You have DB2 v12 on z/OS (or DB2 v11 with REST enablement PTFs)
 
-5.  Expose DB2 data through z/OS Connect
+     - You have administrative authority to create database elements
 
-6.  Create CICS Application
+     - You have knowledge of database and table creation commands
 
-7.  Expose CICS Application data through z/OS Connect
+   - Pre-work:
 
-8.  Create API Connect Instance
+     - Create a database and table space within the DB2 z/OS subsystem
 
-    - Create an IBM Cloud Account
+   - DB2 Tables:
 
-      - [Click here](https://cloud.ibm.com/registration) to go to the IBM Cloud registration page.
+     - A. There are 12 tables that are used in the entire Summit Application (CICS native and Web):
 
-      - Enter your email, first name, last name, Country or Region, and the password you would like to use.
+     |   **Table**   |                                                                      **Description**                                                                       |
+     | :-----------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: |
+     |    PATIENT    |                                     Holds basic patient information (name, contact information, insurance card number)                                     |
+     |     USER      |                                                      Holds patient credentials for login into system                                                       |
+     |  MEDICATION   |                                                     General registry of medications and valid dosages                                                      |
+     |  MEDITATION   |                                                   Record of any meditation sessions held with a patient                                                    |
+     | PRESCRIPTION  |                                     Record of medications prescribed to a patient, with prescription period and dosage                                     |
+     |   THRESHOLD   |                                      Most recent heart rate and blood pressure for a patient. One entry per patient.                                       |
+     |   HEARTRATE   |                                                Log of patient heart rate when measured at a doctor's visit                                                 |
+     | BLOODPRESSURE |                                              Log of patient blood pressure when measured at a doctor's visit                                               |
+     |    SESSION    |                                                  Log of brain activity measurements taken during analysis                                                  |
+     | APPOINTMENTS  |                                  Record of appointments for each patient (including doctor's name, specialty and reason)                                   |
+     |   ALLERGIES   |                                                   List of any allergies a patient has and when they were                                                   |
+     | OBSERVATIONS  | Log of patient measurements (such as height and weight), lab results (like cholesterol and blood sugar) and questionnaire answers (such as smoking status) |
 
-        ![IBM Cloud Create Account](doc/source/images/IBMCloudCreateAccount.gif)
+4. Populate DB2 database with Synthea data
 
-    - Create an API Connect Instance
+   - Visit this [code pattern](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/) for the instructions on populating your DB2 database with data from the Synthea tool
 
-      - From the IBM Cloud Dashboard, click on **Catalog**.
+5. Expose DB2 data through z/OS Connect
 
-      - In the search bar tyep **"API Connect"** and hit **enter**.
+6. Create CICS Application
 
-      - Click on the API Connect card.
+7. Expose CICS Application data through z/OS Connect
 
-      - Name the service. Choose a location to deploy in (Choose the locatino closest to you). Leave the organization and space at the defaults. Scroll down and select the **"Lite"** plan. The click the **Create** button.
+8. Create API Connect Instance
 
-      ![Creating an API Connect Instance](doc/source/images/CreatAPIConnectInstance.gif)
+   - Create an IBM Cloud Account
 
-9)  Connect z/OS Connect REST APIs to API Connect
+     - [Click here](https://cloud.ibm.com/registration) to go to the IBM Cloud registration page.
+
+     - Enter your email, first name, last name, Country or Region, and the password you would like to use.
+
+       ![IBM Cloud Create Account](doc/source/images/IBMCloudCreateAccount.gif)
+
+   - Create an API Connect Instance
+
+     - From the IBM Cloud Dashboard, click on **Catalog**.
+
+     - In the search bar tyep **"API Connect"** and hit **enter**.
+
+     - Click on the API Connect card.
+
+     - Name the service. Choose a location to deploy in (Choose the locatino closest to you). Leave the organization and space at the defaults. Scroll down and select the **"Lite"** plan. The click the **Create** button.
+
+     ![Creating an API Connect Instance](doc/source/images/CreatAPIConnectInstance.gif)
+
+9. Connect z/OS Connect REST APIs to API Connect
