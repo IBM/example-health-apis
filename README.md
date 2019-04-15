@@ -109,6 +109,8 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
      - Once the database and tables are created, a BIND needs to take place to connect the CICS application and the database.
 
+   - The commands for creating the database tables are listed in this [PDF](doc/source/CreateTableStatements.pdf)
+
 4) Populate DB2 database with Synthea data
 
    - Visit this [code pattern](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/) for the instructions on populating your DB2 database with data from the Synthea tool
