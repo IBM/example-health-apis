@@ -173,4 +173,4 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
     - Choose "Drafts"
 
-    -Choose "Drafts"
+      - Choose "Drafts"
