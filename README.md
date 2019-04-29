@@ -173,4 +173,16 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
     - Choose "Drafts"
 
-      - Choose "Drafts"
+    ![Draft Menu](doc/source/images/DraftMenu.png)
+
+    - Click "Products"
+
+    ![Products Button](doc/source/images/ProductsButton.png)
+
+    - Add a new product by clicking the "Add" button
+
+    ![Add Button](doc/source/images/AddButton.png)
+
+    - A "New Product" menu screen should appear. Enter a title and click "Create Product"
+
+    ![New Product Menu](doc/source/images/NewProductMenu.png)
