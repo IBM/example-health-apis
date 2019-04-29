@@ -218,3 +218,13 @@ This is how your APIs will be routed from your backend systems to a developer fr
   - In the "Host" section, enter **\$(catalog.host)**
 
   - Scroll down to the "Schemes" section and uncheck "http"
+
+  ![HostCheck](doc/source/images/HostCheck.png)
+
+  - Near the top of the screen, click the word "Assemble"
+
+  ![Assemble Button](doc/source/images/AssembleButton.png)
+
+  - Click "Create Assembly"
+
+  ![Create Assembly Button](doc/source/images/CreateAssembleButton.png)
