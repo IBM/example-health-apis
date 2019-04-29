@@ -228,3 +228,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
   - Click "Create Assembly"
 
   ![Create Assembly Button](doc/source/images/CreateAssembleButton.png)
+
+  - There will be a scroll bar near the middle of the screen. Scroll down to the Policies section and click and hold "Invoke".
+
+  ![Invoke Button](doc/source/images/InvokeButton.png)
