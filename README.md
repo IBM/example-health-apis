@@ -195,8 +195,26 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
   - Add the API by choosing "Add" and "Import API from a file or URL"
 
-  ![API Add Button](doc/source/images/APIsButton.png)
+  ![API Add Button](doc/source/images/APIAddButton.png)
 
   - Enter the URI for the API document API you want to manage. </br> Ex: https://<span></span>host:port/basepath/api-docs
 
     - Include credentials that have permission to view this document
+
+    ![Import Menu](doc/source/images/ImportMenu.png)
+
+  - Click "Import"
+
+    - _You will now be taken to a screen to provide additional details about the API and add additional security._
+
+- Refine the Imported API
+
+  - _You should see a screen similar to the one below. The defualt Title of the API is equivalent to the base path of the imported API._
+
+  ![Refine API](doc/source/images/RefineAPI.png)
+
+  - Provide the Title and Name of your choice or keep the defualts
+
+  - In the "Host" section, enter **\$(catalog.host)**
+
+  - Scroll down to the "Schemes" section and uncheck "http"
