@@ -1,0 +1,512 @@
+******************************************************************
+*                                                                *
+* LICENSED MATERIALS - PROPERTY OF IBM                           *
+*                                                                *
+* "RESTRICTED MATERIALS OF IBM"                                  *
+*                                                                *
+* (C) COPYRIGHT IBM CORP. 2014 ALL RIGHTS RESERVED               *
+*                                                                *
+* US GOVERNMENT USERS RESTRICTED RIGHTS - USE, DUPLICATION,      *
+* OR DISCLOSURE RESTRICTED BY GSA ADP SCHEDULE                   *
+* CONTRACT WITH IBM CORPORATION                                  *
+*                                                                *
+******************************************************************
+HCMAPS  DFHMSD TYPE=MAP,MODE=INOUT,LANG=COBOL,STORAGE=AUTO,            X
+               TIOAPFX=YES,EXTATT=MAPONLY,CTRL=(FREEKB)
+***********************************************************************
+*
+*       Menu Screen
+*
+***********************************************************************
+HCZMENU  DFHMDI SIZE=(24,80)
+         DFHMDF POS=(1,1),LENGTH=4,INITIAL='HCAZ',                     *
+               ATTRB=(ASKIP)
+         DFHMDF POS=(1,24),LENGTH=25,                                  *
+               INITIAL='Health Care Provider Menu',                    *
+               ATTRB=(ASKIP,BRT)
+         DFHMDF POS=(5,4),LENGTH=18,INITIAL='Select an option: ',      *
+               ATTRB=(ASKIP,NORM)
+HCZINPUT DFHMDF POS=(5,23),LENGTH=1,                                   *
+               ATTRB=(NUM,FSET,NORM,IC),HILIGHT=UNDERLINE
+         DFHMDF POS=(5,25),LENGTH=0,                                   *
+               ATTRB=ASKIP
+         DFHMDF POS=(7,23),LENGTH=15,INITIAL='1 - Add Patient',        *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(9,23),LENGTH=19,INITIAL='2 - Inquire Patient',    *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(11,23),LENGTH=18,INITIAL='3 - Add Medication',    *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(13,23),LENGTH=23,                                 *
+               INITIAL='4 - Inquire Medications',                      *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(15,23),LENGTH=15,INITIAL='5 - Add Visit',         *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(17,23),LENGTH=19,INITIAL='6 - Inquire Visit',     *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(19,23),LENGTH=18,INITIAL='7 - Add Thresholds',    *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(21,23),LENGTH=23,                                 *
+               INITIAL='8 - Inquire Thresholds',                       *
+               ATTRB=(ASKIP,NORM)
+HCZMSG  DFHMDF POS=(24,8),LENGTH=49,                                   *
+               ATTRB=(ASKIP,BRT)
+        DFHMDF POS=(24,64),LENGTH=10,ATTRB=(ASKIP),                    *
+               INITIAL='PF3=EXIT'
+*
+***********************************************************************
+*
+*       Patient Screen
+*
+***********************************************************************
+HCP1MAP  DFHMDI SIZE=(24,80)
+HCP1TRN  DFHMDF POS=(1,1),LENGTH=4,INITIAL='HCP1',                     *
+               ATTRB=(ASKIP)
+HCP1TIT  DFHMDF POS=(1,24),LENGTH=27,                                  *
+               INITIAL='Inquire Patient Information',                  *
+               ATTRB=(ASKIP,BRT)
+         DFHMDF POS=(5,5),LENGTH=12,INITIAL='Patient ID',              *
+               ATTRB=(ASKIP,NORM)
+HCP1PNO  DFHMDF POS=(5,23),LENGTH=10,                                  *
+               ATTRB=(NUM,FSET,IC)
+         DFHMDF POS=(5,34),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(6,5),LENGTH=16,INITIAL='Name :First',             *
+               ATTRB=(ASKIP,NORM)
+HCP1FNA  DFHMDF POS=(6,23),LENGTH=10,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(6,34),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+         DFHMDF POS=(7,5),LENGTH=16,INITIAL='     :Last',              *
+               ATTRB=(ASKIP,NORM)
+HCP1LNA  DFHMDF POS=(7,23),LENGTH=20,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(7,44),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(8,5),LENGTH=12,INITIAL='DOB         ',            *
+               ATTRB=(ASKIP,NORM)
+HCP1DOB  DFHMDF POS=(8,23),LENGTH=10,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(8,34),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+         DFHMDF POS=(8,38),LENGTH=12,INITIAL='(yyyy-mm-dd)',           *
+               ATTRB=(ASKIP,NORM)
+*
+         DFHMDF POS=(9,5),LENGTH=12,INITIAL='Address',                 *
+               ATTRB=(ASKIP,NORM)
+HCP1ADDR DFHMDF POS=(9,23),LENGTH=20,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(9,44),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(10,5),LENGTH=12,INITIAL='City',                   *
+               ATTRB=(ASKIP,NORM)
+HCP1CITY DFHMDF POS=(10,23),LENGTH=20,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(10,44),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(11,5),LENGTH=12,INITIAL='Postcode    ',           *
+               ATTRB=(ASKIP,NORM)
+HCP1HPC  DFHMDF POS=(11,23),LENGTH=10,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(11,34),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(12,5),LENGTH=15,INITIAL='Phone: Mobile  ',        *
+               ATTRB=(ASKIP,NORM)
+HCP1HP2  DFHMDF POS=(12,23),LENGTH=20,                                 *
+               JUSTIFY=BLANK,INITIAL=' ',                              *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(12,44),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(13,5),LENGTH=12,INITIAL='Email  Addr ',           *
+               ATTRB=(ASKIP,NORM)
+HCP1HMO  DFHMDF POS=(13,23),LENGTH=30,                                 *
+               JUSTIFY=BLANK,INITIAL=' ',                              *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(13,54),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(14,5),LENGTH=14,INITIAL='Insurance Card',         *
+               ATTRB=(ASKIP,NORM)
+HCP1INO  DFHMDF POS=(14,23),LENGTH=10,                                 *
+               JUSTIFY=(RIGHT,ZERO),                                   *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(14,34),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(15,5),LENGTH=7,INITIAL='User ID',                 *
+               ATTRB=(ASKIP,NORM)
+HCP1UID  DFHMDF POS=(15,23),LENGTH=10,CASE=MIXED,                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(15,34),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+*
+HCP1MSG DFHMDF POS=(24,8),LENGTH=40,INITIAL=' ',                       *
+               ATTRB=(ASKIP,BRT)
+        DFHMDF POS=(24,55),LENGTH=20,ATTRB=(ASKIP),                    *
+               INITIAL='PF3=EXIT PF12=RETURN'
+*
+***********************************************************************
+*
+*       Medication Screen - Inquiry
+*
+***********************************************************************
+HCM1MAP  DFHMDI SIZE=(24,80)
+         DFHMDF POS=(1,1),LENGTH=4,INITIAL='HCM1',                     *
+               ATTRB=(ASKIP)
+         DFHMDF POS=(1,20),LENGTH=30,                                  *
+               INITIAL='Inquire Medication Information',               *
+               ATTRB=(ASKIP,BRT)
+*
+         DFHMDF POS=(5,5),LENGTH=12,INITIAL='Patient ID',              *
+               ATTRB=(ASKIP,NORM)
+HCM1CNO  DFHMDF POS=(5,23),LENGTH=10,                                  *
+               ATTRB=(FSET,NUM,IC)
+         DFHMDF POS=(5,34),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(6,5),LENGTH=16,INITIAL='Name :First',             *
+               ATTRB=(ASKIP,NORM)
+HCM1FNA  DFHMDF POS=(6,23),LENGTH=10,INITIAL=' ',                      *
+               ATTRB=(PROT,FSET,NORM)
+         DFHMDF POS=(6,34),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+         DFHMDF POS=(7,5),LENGTH=16,INITIAL='     :Last',              *
+               ATTRB=(ASKIP,NORM)
+HCM1LNA  DFHMDF POS=(7,23),LENGTH=20,INITIAL=' ',                      *
+               ATTRB=(PROT,FSET,NORM)
+         DFHMDF POS=(7,44),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(9,2),LENGTH=16,INITIAL='Drug Name ',              *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(9,33),LENGTH=12,INITIAL='Strength  ',             *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(9,57),LENGTH=12,INITIAL='Amount',                 *
+               ATTRB=(ASKIP,NORM)
+HCM1DNA1 DFHMDF POS=(10,2),LENGTH=27,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(10,30),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+HCM1DST1 DFHMDF POS=(10,33),LENGTH=20,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(10,54),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+HCM1DAM1 DFHMDF POS=(10,57),LENGTH=5,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(10,63),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(11,33),LENGTH=12,INITIAL='Route',                 *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(11,57),LENGTH=12,INITIAL='Frequency ',            *
+               ATTRB=(ASKIP,NORM)
+HCM1DRO1 DFHMDF POS=(12,33),LENGTH=20,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(12,54),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+HCM1DFR1 DFHMDF POS=(12,57),LENGTH=20,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(12,78),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(14,2),LENGTH=16,INITIAL='Drug Name ',             *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(14,33),LENGTH=12,INITIAL='Strength  ',            *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(14,57),LENGTH=12,INITIAL='Amount',                *
+               ATTRB=(ASKIP,NORM)
+HCM1DNA2 DFHMDF POS=(15,2),LENGTH=27,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(15,30),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+HCM1DST2 DFHMDF POS=(15,33),LENGTH=20,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(15,54),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+HCM1DAM2 DFHMDF POS=(15,57),LENGTH=5,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(15,63),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(16,33),LENGTH=12,INITIAL='Route',                 *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(16,57),LENGTH=12,INITIAL='Frequency ',            *
+               ATTRB=(ASKIP,NORM)
+HCM1DRO2 DFHMDF POS=(17,33),LENGTH=20,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(17,54),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+HCM1DFR2 DFHMDF POS=(17,57),LENGTH=20,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(17,78),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(19,2),LENGTH=16,INITIAL='Drug Name ',             *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(19,33),LENGTH=12,INITIAL='Strength  ',            *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(19,57),LENGTH=12,INITIAL='Amount',                *
+               ATTRB=(ASKIP,NORM)
+HCM1DNA3 DFHMDF POS=(20,2),LENGTH=27,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(20,30),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+HCM1DST3 DFHMDF POS=(20,33),LENGTH=20,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(20,54),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+HCM1DAM3 DFHMDF POS=(20,57),LENGTH=5,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(20,63),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(21,33),LENGTH=12,INITIAL='Route',                 *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(21,57),LENGTH=12,INITIAL='Frequency ',            *
+               ATTRB=(ASKIP,NORM)
+HCM1DRO3 DFHMDF POS=(22,33),LENGTH=20,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(22,54),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+HCM1DFR3 DFHMDF POS=(22,57),LENGTH=20,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(22,78),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+*
+HCM1MSG  DFHMDF POS=(24,8),LENGTH=43,INITIAL=' ',                      *
+               ATTRB=(ASKIP,BRT)
+        DFHMDF POS=(24,55),LENGTH=20,ATTRB=(ASKIP),                    *
+               INITIAL='PF3=EXIT PF12=RETURN'
+*
+***********************************************************************
+*
+*       Medication Screen - Add
+*
+***********************************************************************
+HCMAMAP  DFHMDI SIZE=(24,80)
+         DFHMDF POS=(1,1),LENGTH=4,INITIAL='HCMA',                     *
+               ATTRB=(ASKIP)
+         DFHMDF POS=(1,20),LENGTH=26,                                  *
+               INITIAL='Add Medication Information',                   *
+               ATTRB=(ASKIP,BRT)
+*
+         DFHMDF POS=(5,5),LENGTH=12,INITIAL='Patient ID',              *
+               ATTRB=(ASKIP,NORM)
+HCMACNO  DFHMDF POS=(5,23),LENGTH=10,                                  *
+               ATTRB=(FSET,NUM,IC)
+         DFHMDF POS=(5,34),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(6,5),LENGTH=16,INITIAL='Name :First',             *
+               ATTRB=(ASKIP,NORM)
+HCMAFNA  DFHMDF POS=(6,23),LENGTH=10,INITIAL=' ',                      *
+               ATTRB=(PROT,FSET,NORM)
+         DFHMDF POS=(6,34),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+         DFHMDF POS=(7,5),LENGTH=16,INITIAL='     :Last',              *
+               ATTRB=(ASKIP,NORM)
+HCMALNA  DFHMDF POS=(7,23),LENGTH=20,INITIAL=' ',                      *
+               ATTRB=(PROT,FSET,NORM)
+         DFHMDF POS=(7,44),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(9,5),LENGTH=12,INITIAL='Drug Name ',              *
+               ATTRB=(ASKIP,NORM)
+HCMADNAM DFHMDF POS=(9,20),LENGTH=27,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(9,48),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+         DFHMDF POS=(10,5),LENGTH=12,INITIAL='Strength  ',             *
+               ATTRB=(ASKIP,NORM)
+HCMADSTR DFHMDF POS=(10,20),LENGTH=20,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(10,41),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+         DFHMDF POS=(11,5),LENGTH=12,INITIAL='Amount',                 *
+               ATTRB=(ASKIP,NORM)
+HCMADAMO DFHMDF POS=(11,20),LENGTH=5,INITIAL=' ',                      *
+               ATTRB=(NUM,FSET,NORM)
+         DFHMDF POS=(11,26),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+         DFHMDF POS=(12,5),LENGTH=12,INITIAL='Route',                  *
+               ATTRB=(ASKIP,NORM)
+HCMADROU DFHMDF POS=(12,20),LENGTH=20,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(12,41),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+         DFHMDF POS=(13,5),LENGTH=12,INITIAL='Frequency ',             *
+               ATTRB=(ASKIP,NORM)
+HCMADFRE DFHMDF POS=(13,20),LENGTH=2,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(13,23),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+         DFHMDF POS=(13,34),LENGTH=19,INITIAL='(1-4 times per day)',   *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(14,5),LENGTH=12,INITIAL='Identifier ',            *
+               ATTRB=(ASKIP,NORM)
+HCMAIDEN DFHMDF POS=(14,20),LENGTH=20,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(14,41),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+         DFHMDF POS=(15,5),LENGTH=12,INITIAL='Biomed Type ',           *
+               ATTRB=(ASKIP,NORM)
+HCMATYPE DFHMDF POS=(15,20),LENGTH=2,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(15,23),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+         DFHMDF POS=(15,34),LENGTH=12,INITIAL='(HR, BP, NA)',          *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(16,5),LENGTH=12,INITIAL='Start Date  ',           *
+               ATTRB=(ASKIP,NORM)
+HCMASDTA DFHMDF POS=(16,20),LENGTH=10,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(16,31),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+         DFHMDF POS=(16,34),LENGTH=12,INITIAL='(yyyy-mm-dd)',          *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(17,5),LENGTH=12,INITIAL='End Date  ',             *
+               ATTRB=(ASKIP,NORM)
+HCMAEDTA DFHMDF POS=(17,20),LENGTH=10,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(17,31),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+         DFHMDF POS=(17,34),LENGTH=12,INITIAL='(yyyy-mm-dd)',          *
+               ATTRB=(ASKIP,NORM)
+*
+HCMAMSG DFHMDF POS=(24,8),LENGTH=40,INITIAL=' ',                       *
+               ATTRB=(ASKIP,BRT)
+        DFHMDF POS=(24,55),LENGTH=20,ATTRB=(ASKIP),                    *
+               INITIAL='PF3=EXIT PF12=RETURN'
+*
+***********************************************************************
+*
+*       Patient Visit Screen
+*
+***********************************************************************
+HCV1MAP  DFHMDI SIZE=(24,80)
+*
+HCV1TRN  DFHMDF POS=(1,1),LENGTH=4,INITIAL='HCV1',                     *
+               ATTRB=(ASKIP)
+HCV1TIT  DFHMDF POS=(1,12),LENGTH=33,                                  *
+               INITIAL='Inquire Visit Information',                    *
+               ATTRB=(ASKIP,BRT)
+*
+         DFHMDF POS=(5,5),LENGTH=12,INITIAL='Patient ID',              *
+               ATTRB=(ASKIP,NORM)
+HCV1PNO  DFHMDF POS=(5,23),LENGTH=10,                                  *
+               ATTRB=(FSET,NUM,IC)
+         DFHMDF POS=(5,34),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(6,5),LENGTH=16,INITIAL='Name :First',             *
+               ATTRB=(ASKIP,NORM)
+HCV1FNA  DFHMDF POS=(6,23),LENGTH=10,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(6,34),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+         DFHMDF POS=(7,5),LENGTH=16,INITIAL='     :Last',              *
+               ATTRB=(ASKIP,NORM)
+HCV1LNA  DFHMDF POS=(7,23),LENGTH=20,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(7,44),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(9,5),LENGTH=12,INITIAL='Visit Date  ',            *
+               ATTRB=(ASKIP,NORM)
+HCV1DATE DFHMDF POS=(9,23),LENGTH=10,INITIAL=' ',                      *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(9,34),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+         DFHMDF POS=(9,36),LENGTH=12,INITIAL='(yyyy-mm-dd)',           *
+               ATTRB=(ASKIP,NORM)
+*
+         DFHMDF POS=(10,5),LENGTH=12,INITIAL='Visit Time  ',           *
+               ATTRB=(ASKIP,NORM)
+HCV1TIME DFHMDF POS=(10,23),LENGTH=10,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(10,34),LENGTH=1,INITIAL=' ',                      *
+               ATTRB=ASKIP
+         DFHMDF POS=(10,36),LENGTH=12,INITIAL='(hh:mm:ss)',            *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(11,62),LENGTH=11,INITIAL='Thresholds',            *
+               ATTRB=(ASKIP,NORM)
+*
+         DFHMDF POS=(12,5),LENGTH=12,INITIAL='Heart Rate  ',           *
+               ATTRB=(ASKIP,NORM)
+HCV1HRATE DFHMDF POS=(12,23),LENGTH=20,INITIAL=' ',                    *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(12,44),LENGTH=0,                                  *
+               ATTRB=ASKIP
+HCV1HRTH DFHMDF POS=(12,62),LENGTH=10,                                 *
+               ATTRB=(ASKIP,NORM)
+         DFHMDF POS=(13,5),LENGTH=14,INITIAL='Blood Pressure',         *
+               ATTRB=(ASKIP,NORM)
+HCV1BLPR DFHMDF POS=(13,23),LENGTH=20,INITIAL=' ',                     *
+               ATTRB=(UNPROT,FSET,NORM)
+         DFHMDF POS=(13,44),LENGTH=0,                                  *
+               ATTRB=ASKIP
+HCV1BPTH DFHMDF POS=(13,62),LENGTH=10,                                 *
+               ATTRB=(ASKIP,NORM)
+*
+HCV1MSG DFHMDF POS=(24,8),LENGTH=40,INITIAL=' ',                       *
+               ATTRB=(ASKIP,BRT)
+        DFHMDF POS=(24,55),LENGTH=20,ATTRB=(ASKIP),                    *
+               INITIAL='PF3=EXIT PF12=RETURN'
+*
+***********************************************************************
+*
+*       Patient Thresholds Screen
+*
+***********************************************************************
+HCT1MAP  DFHMDI SIZE=(24,80)
+*
+HCT1TRN  DFHMDF POS=(1,1),LENGTH=4,INITIAL='HCT1',                     *
+               ATTRB=(ASKIP)
+HCT1TIT  DFHMDF POS=(1,12),LENGTH=33,                                  *
+               INITIAL='Inquire Patient Threshold',                    *
+               ATTRB=(ASKIP,BRT)
+*
+         DFHMDF POS=(5,5),LENGTH=12,INITIAL='Patient ID',              *
+               ATTRB=(ASKIP,NORM)
+HCT1PNO  DFHMDF POS=(5,23),LENGTH=10,                                  *
+               ATTRB=(FSET,NUM,IC)
+         DFHMDF POS=(5,34),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(6,5),LENGTH=16,INITIAL='Name :First',             *
+               ATTRB=(ASKIP,NORM)
+HCT1FNA  DFHMDF POS=(6,23),LENGTH=10,INITIAL=' ',                      *
+               ATTRB=(PROT,FSET,NORM)
+         DFHMDF POS=(6,34),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+         DFHMDF POS=(7,5),LENGTH=16,INITIAL='     :Last',              *
+               ATTRB=(ASKIP,NORM)
+HCT1LNA  DFHMDF POS=(7,23),LENGTH=20,INITIAL=' ',                      *
+               ATTRB=(PROT,FSET,NORM)
+         DFHMDF POS=(7,44),LENGTH=1,INITIAL=' ',                       *
+               ATTRB=ASKIP
+*
+         DFHMDF POS=(11,23),LENGTH=11,INITIAL='Thresholds',            *
+               ATTRB=(ASKIP,NORM)
+*
+         DFHMDF POS=(12,5),LENGTH=12,INITIAL='Heart Rate  ',           *
+               ATTRB=(ASKIP,NORM)
+HCT1HRTH DFHMDF POS=(12,23),LENGTH=10,                                 *
+               ATTRB=(FSET,NUM)
+         DFHMDF POS=(13,5),LENGTH=14,INITIAL='Blood Pressure',         *
+               ATTRB=(ASKIP,NORM)
+HCT1BPTH DFHMDF POS=(13,23),LENGTH=10,                                 *
+               ATTRB=(UNPROT,FSET,NORM)
+*
+HCT1MSG DFHMDF POS=(24,8),LENGTH=40,INITIAL=' ',                       *
+               ATTRB=(ASKIP,BRT)
+        DFHMDF POS=(24,55),LENGTH=20,ATTRB=(ASKIP),                    *
+               INITIAL='PF3=EXIT PF12=RETURN'
+*
+        DFHMSD TYPE=FINAL
+        END

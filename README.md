@@ -111,36 +111,66 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
    - The commands for creating the database tables are listed in this [PDF](doc/source/CreateTableStatements.pdf)
 
-4) Populate DB2 database with Synthea data
+4)  Populate DB2 database with Synthea data
 
-   - Visit this [code pattern](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/) for the instructions on populating your DB2 database with data from the Synthea tool
+    - Visit this [code pattern](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/) for the instructions on populating your DB2 database with data from the Synthea tool
 
-5) Expose DB2 data through z/OS Connect
+5)  Expose DB2 data through z/OS Connect
 
-6) Create CICS Application
+6)  Create CICS Application
 
-7) Expose CICS Application data through z/OS Connect
+    - A sample CICS application is included in this code pattern. The application is known as HCAZ. It is a simple CICS application for inputing and retrieving healthcare information.
 
-8) Create API Connect Instance
+    - The source code is included in the [HCAZ_Source](HCAZ_Source) folder.
 
-   - Create an IBM Cloud Account
+    - The source code includes JCL files to install the application. Some changes may need to be made to the JCL depending on your installation. If you have any questions ask your organization's zSystem Programmer or a zSystem Developer.
 
-     - [Click here](https://cloud.ibm.com/registration) to go to the IBM Cloud registration page.
+7)  Expose CICS Application data through z/OS Connect
 
-     - Enter your email, first name, last name, Country or Region, and the password you would like to use.
+8)  Create API Connect Instance
 
-       ![IBM Cloud Create Account](doc/source/images/IBMCloudCreateAccount.gif)
+    - Create an IBM Cloud Account
 
-   - Create an API Connect Instance
+      - [Click here](https://cloud.ibm.com/registration) to go to the IBM Cloud registration page.
 
-     - From the IBM Cloud Dashboard, click on **Catalog**.
+      - Enter your email, first name, last name, Country or Region, and the password you would like to use.
 
-     - In the search bar tyep **"API Connect"** and hit **enter**.
+        ![IBM Cloud Create Account](doc/source/images/IBMCloudCreateAccount.gif)
 
-     - Click on the API Connect card.
+    - Create an API Connect Instance
 
-     - Name the service. Choose a location to deploy in (Choose the locatino closest to you). Leave the organization and space at the defaults. Scroll down and select the **"Lite"** plan. The click the **Create** button.
+      - From the IBM Cloud Dashboard, click on **Catalog**.
 
-     ![Creating an API Connect Instance](doc/source/images/CreatAPIConnectInstance.gif)
+      - In the search bar tyep **"API Connect"** and hit **enter**.
 
-9) Connect z/OS Connect REST APIs to API Connect
+      - Click on the API Connect card.
+
+      - Name the service. Choose a location to deploy in (Choose the locatino closest to you). Leave the organization and space at the defaults. Scroll down and select the **"Lite"** plan. The click the **Create** button.
+
+      ![Creating an API Connect Instance](doc/source/images/CreatAPIConnectInstance.gif)
+
+9)  Connect z/OS Connect REST APIs to API Connect
+
+    - Login to you IBM Cloud account if you are not already logged in.
+
+    - Navigate to API Connect
+
+      - Under "Resource List", click the icon next to "Cloud Foundry" Services
+
+      - Choose your API Connect Service
+
+    ![Dashboard API Connect](doc/source/images/DashboardAPIConnect.png)
+
+    - Create an API Connect Product
+
+      - A screen should appear with a large blue box in the middle.
+
+      - Click the ">>" icon next to the word Dashboard (near the top right)
+
+    ![>> Icon](doc/source/images/>>Icon.png)
+
+    <br/>
+
+    - Choose "Drafts"
+
+    -Choose "Drafts"
