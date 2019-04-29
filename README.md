@@ -23,166 +23,180 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 # Steps
 
-1. Install z/OS Connect
+## 1. Install z/OS Connect
 
-   - Please refer to this [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf) on how to install z/OS Connect. Go to page 8 for information on installation.
+- Please refer to this [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf) on how to install z/OS Connect. Go to page 8 for information on installation.
 
-2. Create a z/OS Connect Project
+## 2. Create a z/OS Connect Project
 
-   - Open the Eclipse tool (IBM® Explorer for z/OS Aqua) in which you installed the z/OS Connect EE API Editor.
+- Open the Eclipse tool (IBM® Explorer for z/OS Aqua) in which you installed the z/OS Connect EE API Editor.
 
-   - Switch to the z/OS Connect Enterprise Edition perspective.
+- Switch to the z/OS Connect Enterprise Edition perspective.
 
-     - From menu bar, select **Window > Open Perspective > Other**
+  - From menu bar, select **Window > Open Perspective > Other**
 
-     - In the list of perspectives, select **z/OS Connect Enterprise Edition** and click **OK**.
+  - In the list of perspectives, select **z/OS Connect Enterprise Edition** and click **OK**.
 
-     You are now in the **z/OS Connect Enterprise Edition** perspective, with related views and resources readily available.
+  You are now in the **z/OS Connect Enterprise Edition** perspective, with related views and resources readily available.
 
-   - Create an API project.
+- Create an API project.
 
-   - From the menu bar, select **File > New > z/OS Connect EE API Project**. The z/OS Connect EE API Project wizard opens.
+- From the menu bar, select **File > New > z/OS Connect EE API Project**. The z/OS Connect EE API Project wizard opens.
 
-     - Enter the project properties below, then click **Finish**.
+  - Enter the project properties below, then click **Finish**.
 
-   | **Project property** |                                                                           **Description**                                                                            |                 **Sample Value to specify**                 |
-   | :------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------: |
-   |     Project name     |                                        Unique alphanumeric name for your project. This is the name of the project in Eclipse.                                        | SummitHealth <span style="color:red"> Ask Kenishia </span>. |
-   |       API name       |                                   The name of your API. This is the name by which the z/OS Connect EE server knows about this API.                                   |       <span style="color:red"> Ask Kenishia </span>.        |
-   |      Base path       | The unique basePath attribute that specifies the root of all the resources in this API. This path is used by REST clients in the URI they send in to invoke the API. |        <span style="color:red"> Ask Kenishia </span>        |
-   |     Description      |                                           Optional field to provide a description of this API for documentation purposes.                                            |        <span style="color:red"> Ask Kenishia </span>        |
+| **Project property** |                                                                           **Description**                                                                            |                 **Naming Convention**                  |
+| :------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------: |
+|     Project name     |                                        Unique alphanumeric name for your project. This is the name of the project in Eclipse.                                        | A name that relates to the info you are trying to see. |
+|       API name       |                                   The name of your API. This is the name by which the z/OS Connect EE server knows about this API.                                   |                    showpatientinfo.                    |
+|      Base path       | The unique basePath attribute that specifies the root of all the resources in this API. This path is used by REST clients in the URI they send in to invoke the API. |                    /showPatientInfo                    |
+|     Description      |                                           Optional field to provide a description of this API for documentation purposes.                                            |               "Retrieves pateient info."               |
 
-   - [Source](https://www.ibm.com/support/knowledgecenter/en/SS4SVW_2.0.0/com.ibm.zosconnect.doc/scenarios/ims_create_api.html)
+- [Source](https://www.ibm.com/support/knowledgecenter/en/SS4SVW_2.0.0/com.ibm.zosconnect.doc/scenarios/ims_create_api.html)
 
-3. Create the DB2 database and tables
+## 3. Create the DB2 database and tables
 
-   - Assumptions/Prerequisites
+- Assumptions/Prerequisites
 
-     - You have DB2 v12 on z/OS (or DB2 v11 with REST enablement PTFs)
+  - You have DB2 v12 on z/OS (or DB2 v11 with REST enablement PTFs)
 
-     - You have administrative authority to create database elements
+  - You have administrative authority to create database elements
 
-     - You have knowledge of database and table creation commands
+  - You have knowledge of database and table creation commands
 
-   - Pre-work:
+- Pre-work:
 
-     - Create a database and table space within the DB2 z/OS subsystem
+  - Create a database and table space within the DB2 z/OS subsystem
 
-   - DB2 Tables:
+- DB2 Tables:
 
-     - A. There are 12 tables that are used in the entire Summit Application (CICS native and Web):
+  - A. There are 12 tables that are used in the entire Summit Application (CICS native and Web):
 
-     |   **Table**   |                                                                      **Description**                                                                       |
-     | :-----------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: |
-     |    PATIENT    |                                     Holds basic patient information (name, contact information, insurance card number)                                     |
-     |     USER      |                                                      Holds patient credentials for login into system                                                       |
-     |  MEDICATION   |                                                     General registry of medications and valid dosages                                                      |
-     |  MEDITATION   |                                                   Record of any meditation sessions held with a patient                                                    |
-     | PRESCRIPTION  |                                     Record of medications prescribed to a patient, with prescription period and dosage                                     |
-     |   THRESHOLD   |                                      Most recent heart rate and blood pressure for a patient. One entry per patient.                                       |
-     |   HEARTRATE   |                                                Log of patient heart rate when measured at a doctor's visit                                                 |
-     | BLOODPRESSURE |                                              Log of patient blood pressure when measured at a doctor's visit                                               |
-     |    SESSION    |                                                  Log of brain activity measurements taken during analysis                                                  |
-     | APPOINTMENTS  |                                  Record of appointments for each patient (including doctor's name, specialty and reason)                                   |
-     |   ALLERGIES   |                                                   List of any allergies a patient has and when they were                                                   |
-     | OBSERVATIONS  | Log of patient measurements (such as height and weight), lab results (like cholesterol and blood sugar) and questionnaire answers (such as smoking status) |
+  |   **Table**   |                                                                      **Description**                                                                       |
+  | :-----------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: |
+  |    PATIENT    |                                     Holds basic patient information (name, contact information, insurance card number)                                     |
+  |     USER      |                                                      Holds patient credentials for login into system                                                       |
+  |  MEDICATION   |                                                     General registry of medications and valid dosages                                                      |
+  |  MEDITATION   |                                                   Record of any meditation sessions held with a patient                                                    |
+  | PRESCRIPTION  |                                     Record of medications prescribed to a patient, with prescription period and dosage                                     |
+  |   THRESHOLD   |                                      Most recent heart rate and blood pressure for a patient. One entry per patient.                                       |
+  |   HEARTRATE   |                                                Log of patient heart rate when measured at a doctor's visit                                                 |
+  | BLOODPRESSURE |                                              Log of patient blood pressure when measured at a doctor's visit                                               |
+  |    SESSION    |                                                  Log of brain activity measurements taken during analysis                                                  |
+  | APPOINTMENTS  |                                  Record of appointments for each patient (including doctor's name, specialty and reason)                                   |
+  |   ALLERGIES   |                                                   List of any allergies a patient has and when they were                                                   |
+  | OBSERVATIONS  | Log of patient measurements (such as height and weight), lab results (like cholesterol and blood sugar) and questionnaire answers (such as smoking status) |
 
-   - Seven (7) of the tables are used in the Web Interface:
+- Seven (7) of the tables are used in the Web Interface:
 
-     - PATIENT
+  - PATIENT
 
-     - USER
+  - USER
 
-     - MEDICATION
+  - MEDICATION
 
-     - PRESCRIPTION
+  - PRESCRIPTION
 
-     - APPOINTMENTS
+  - APPOINTMENTS
 
-     - ALLERGIES
+  - ALLERGIES
 
-     - OBSERVATIONS
+  - OBSERVATIONS
 
-   - Create the tables for the functions that will be implemented in the Healthcare system.
+- Create the tables for the functions that will be implemented in the Healthcare system.
 
-     - The tables should be created in the table space that was defined to contain the Healthcare tables
+  - The tables should be created in the table space that was defined to contain the Healthcare tables
 
-     - Once the database and tables are created, a BIND needs to take place to connect the CICS application and the database.
+  - Once the database and tables are created, a BIND needs to take place to connect the CICS application and the database.
 
-   - The commands for creating the database tables are listed in this [PDF](doc/source/CreateTableStatements.pdf)
+- The commands for creating the database tables are listed in this [PDF](doc/source/CreateTableStatements.pdf)
 
-4)  Populate DB2 database with Synthea data
+## 4) Populate DB2 database with Synthea data
 
-    - Visit this [code pattern](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/) for the instructions on populating your DB2 database with data from the Synthea tool
+- Visit this [code pattern](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/) for the instructions on populating your DB2 database with data from the Synthea tool
 
-5)  Expose DB2 data through z/OS Connect
+## 5) Expose DB2 data through z/OS Connect
 
-6)  Create CICS Application
+## 6) Create CICS Application
 
-    - A sample CICS application is included in this code pattern. The application is known as HCAZ. It is a simple CICS application for inputing and retrieving healthcare information.
+- A sample CICS application is included in this code pattern. The application is known as HCAZ. It is a simple CICS application for inputing and retrieving healthcare information.
 
-    - The source code is included in the [HCAZ_Source](HCAZ_Source) folder.
+- The source code is included in the [HCAZ_Source](HCAZ_Source) folder.
 
-    - The source code includes JCL files to install the application. Some changes may need to be made to the JCL depending on your installation. If you have any questions ask your organization's zSystem Programmer or a zSystem Developer.
+- The source code includes JCL files to install the application. Some changes may need to be made to the JCL depending on your installation. If you have any questions ask your organization's zSystem Programmer or a zSystem Developer.
 
-7)  Expose CICS Application data through z/OS Connect
+## 7) Expose CICS Application data through z/OS Connect
 
-8)  Create API Connect Instance
+## 8) Create API Connect Instance
 
-    - Create an IBM Cloud Account
+- Create an IBM Cloud Account
 
-      - [Click here](https://cloud.ibm.com/registration) to go to the IBM Cloud registration page.
+  - [Click here](https://cloud.ibm.com/registration) to go to the IBM Cloud registration page.
 
-      - Enter your email, first name, last name, Country or Region, and the password you would like to use.
+  - Enter your email, first name, last name, Country or Region, and the password you would like to use.
 
-        ![IBM Cloud Create Account](doc/source/images/IBMCloudCreateAccount.gif)
+  ![IBM Cloud Create Account](doc/source/images/IBMCloudCreateAccount.gif)
 
-    - Create an API Connect Instance
+- Create an API Connect Instance
 
-      - From the IBM Cloud Dashboard, click on **Catalog**.
+  - From the IBM Cloud Dashboard, click on **Catalog**.
 
-      - In the search bar tyep **"API Connect"** and hit **enter**.
+  - In the search bar tyep **"API Connect"** and hit **enter**.
 
-      - Click on the API Connect card.
+  - Click on the API Connect card.
 
-      - Name the service. Choose a location to deploy in (Choose the locatino closest to you). Leave the organization and space at the defaults. Scroll down and select the **"Lite"** plan. The click the **Create** button.
+  - Name the service. Choose a location to deploy in (Choose the locatino closest to you). Leave the organization and space at the defaults. Scroll down and select the **"Lite"** plan. The click the **Create** button.
 
-      ![Creating an API Connect Instance](doc/source/images/CreatAPIConnectInstance.gif)
+  ![Creating an API Connect Instance](doc/source/images/CreatAPIConnectInstance.gif)
 
-9)  Connect z/OS Connect REST APIs to API Connect
+## 9) Connect z/OS Connect REST APIs to API Connect
 
-    - Login to you IBM Cloud account if you are not already logged in.
+- Login to you IBM Cloud account if you are not already logged in.
 
-    - Navigate to API Connect
+- Navigate to API Connect
 
-      - Under "Resource List", click the icon next to "Cloud Foundry" Services
+  - Under "Resource List", click the icon next to "Cloud Foundry" Services
 
-      - Choose your API Connect Service
+  - Choose your API Connect Service
 
-    ![Dashboard API Connect](doc/source/images/DashboardAPIConnect.png)
+  ![Dashboard API Connect](doc/source/images/DashboardAPIConnect.png)
 
-    - Create an API Connect Product
+- Create an API Connect Product
 
-      - A screen should appear with a large blue box in the middle.
+  - A screen should appear with a large blue box in the middle.
 
-      - Click the ">>" icon next to the word Dashboard (near the top right)
+  - Click the ">>" icon next to the word Dashboard (near the top right)
 
-    ![>> Icon](doc/source/images/>>Icon.png)
+  ![>> Icon](doc/source/images/>>Icon.png)
 
-    <br/>
+  - Choose "Drafts"
 
-    - Choose "Drafts"
+  ![Draft Menu](doc/source/images/DraftMenu.png)
 
-    ![Draft Menu](doc/source/images/DraftMenu.png)
+  - Click "Products"
 
-    - Click "Products"
+  ![Products Button](doc/source/images/ProductsButton.png)
 
-    ![Products Button](doc/source/images/ProductsButton.png)
+  - Add a new product by clicking the "Add" button
 
-    - Add a new product by clicking the "Add" button
+  ![Add Button](doc/source/images/AddButton.png)
 
-    ![Add Button](doc/source/images/AddButton.png)
+  - A "New Product" menu screen should appear. Enter a title and click "Create Product"
 
-    - A "New Product" menu screen should appear. Enter a title and click "Create Product"
+  ![New Product Menu](doc/source/images/NewProductMenu.png)
 
-    ![New Product Menu](doc/source/images/NewProductMenu.png)
+- Import the z/OS Connect API
+
+  - You should be in the Drafts section again. If not, then return to it by clicking the ">>" near the top left corner and choosing "Drafts".
+
+  - Click "APIs"
+
+  ![APIs Button](doc/source/images/APIsButton.png)
+
+  - Add the API by choosing "Add" and "Import API from a file or URL"
+
+  ![API Add Button](doc/source/images/APIsButton.png)
+
+  - Enter the URI for the API document API you want to manage
+
+    - Ex: https://host:port/basepath/api-docs
