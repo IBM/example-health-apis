@@ -197,6 +197,6 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
   ![API Add Button](doc/source/images/APIsButton.png)
 
-  - Enter the URI for the API document API you want to manage
+  - Enter the URI for the API document API you want to manage. </br> Ex: https://<span></span>host:port/basepath/api-docs
 
-    - Ex: https://<span></span>host:port/basepath/api-docs
+    - Include credentials that have permission to view this document
