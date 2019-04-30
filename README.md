@@ -1,4 +1,4 @@
-# **CODE PATTERN IN PROGRESS.<br/> DO NOT TRY TO COMPLETE.**
+# **CODE PATTERN IN PROGRESS.<br/> DO NOT TRY TO COMPLETE!!!**
 
 # z/OS Connect & API Connect Code Pattern for Summit Health
 
