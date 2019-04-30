@@ -260,3 +260,89 @@ This is how your APIs will be routed from your backend systems to a developer fr
   - Validate the API by clicking the circle with a checkbox (![Circle Checkbox](doc/source/images/CircleCheckBox.png)) near the top right of the screen. </br> A message should appear that says "Validation Complete"
 
   ![Validation Complete](doc/source/images/ValidationComplete.png)
+
+  - Save the API by clicking the save icon (![Save Icon](doc/source/images/SaveIcon.png))
+
+- Test the API
+
+  - Click the trianfle above the Invoke box
+
+  ![PlayButton](doc/source/images/PlayButton.png)
+
+  - A menu will appear on the left. Under **Setup**, it specifies the name of the Catalog (_default in the example with value Test Catalog_) and the name of the Product that contains the API.
+
+  - For safety, click "Republish Product" if it is recommended.
+
+  ![Republish Product](doc/source/images/Republish.png)
+
+  - Further down in the same menu, click the triangle next to the word Operation to choose the part of the API to test.
+
+  ![Operation Blank](doc/source/images/OperationBlank.png)
+
+  ![Operation Blank](doc/source/images/OperationFilled.png)
+
+  - Enter the authorization credentials and test parameters and click "Invoke".
+
+  ![Test Form](doc/source/images/TestForm.png)
+
+  - Scroll down to see the results of the test.
+
+  ![Test Response 1](doc/source/images/TestResponse1.png)
+
+  ![Test Response 2](doc/source/images/TestResponse2.png)
+
+- Publish the Newly Created API to the Developer Portal
+
+  - Click the ">>" icon near the top left of the screen
+
+  ![>>Icon2](doc/source/images/>>Icon2.png)
+
+  - Choose "Dashboard"
+
+  - Click the picture that appears in the middle of the screen
+
+  ![OpenBookIcon](doc/source/images/OpenBookIcon.png)
+
+  - View the newly published product in the catalog
+
+  - To get to the portal, click the gear icon (![Gear Icon](doc/source/images/GearIcon.png)) then choose "Portal" on the left.
+
+    - If you hace not created on yet, you can do so now.
+
+  - Open your instance of the Developer Portal (click the URL)
+
+  ![Portal URL](doc/source/images/PortalURL.png)
+
+  - Login to the portal
+
+  - Select "API Products" at the top of the page.
+
+  ![API Products](doc/source/images/APIProducts.png)
+
+  - A list of products similar to the list of products in your previous view should appear
+
+  ![Product List](doc/source/images/ProductList.png)
+
+- Testing the API within the Developer Portal
+
+  - Click on the Product to which the API belongs
+
+  - A list of the APIs that belong to the product should appear on the left.
+
+  ![API List](doc/source/images/APIList.png)
+
+  - Select the API you created (and would like to test)
+
+    - A testing screen should appear. Details about the API will be in the middle and the testing area will be on the right.
+
+  ![Testing Screen](doc/source/images/TestingScreen.png)
+
+  - Scroll on the right to the area to enter credentials and test values
+
+  ![Test Example Input](doc/source/images/TestExampleInput.png)
+
+  - Click "Call operation"
+
+  - Results should appear below the Call Operation button
+
+  ![Test Example Result](doc/source/images/TestExampleResutl.png)
