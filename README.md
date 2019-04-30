@@ -232,3 +232,31 @@ This is how your APIs will be routed from your backend systems to a developer fr
   - There will be a scroll bar near the middle of the screen. Scroll down to the Policies section and click and hold "Invoke".
 
   ![Invoke Button](doc/source/images/InvokeButton.png)
+
+  - Drag the invoke action to a place between the circles. A dotted box will appear where you can drop it.
+
+  ![Drag Invoke](doc/source/images/DragInvoke.png)
+
+  - _After you drop it, the area will look like this picture below:_
+
+  ![Invoke In Place](doc/source/images/InvokeInPlace.png)
+
+  - Click the new "invoke" action. A list of options should appear on the right
+
+    - Modify the URL to be: **https://<span></span>host:port\$(request.path)**
+
+    - Scroll down to the HTTP method and select "Keep"
+
+    ![Keep Method](doc/source/images/KeepMethod.png)
+
+  - Add the API to a product </br> Click the three vertical dots (![Three Dots](doc/source/images/ThreeDots.png)) near the top right and a pop-up menu will appear. Choose "Add to existing products"
+
+  ![Add Existing Products](doc/source/images/AddExistingProducts.png)
+
+  - A new menu will appear entitled "Add to existing products". Click the check box next to the product name you created in earlier steps. The click "Add" (blue button at the bottom)
+
+  ![Select Product](doc/source/images/SelectProduct.png)
+
+  - Validate the API by clicking the circle with a checkbox (![Circle Checkbox](doc/source/images/CircleCheckBox.png)) near the top right of the screen. </br> A message should appear that says "Validation Complete"
+
+  ![Validation Complete](doc/source/images/ValidationComplete.png)
