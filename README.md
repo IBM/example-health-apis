@@ -25,6 +25,10 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 # Steps
 
+1. [Install z/OS Connect](#1.installz/osconnect)
+2. Create a z/OS Connect Project
+3. Create the DB2 database and tables
+
 ## 1. Install z/OS Connect
 
 - Please refer to this [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf) on how to install z/OS Connect. Go to page 8 for information on installation.
