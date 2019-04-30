@@ -1,4 +1,4 @@
-# <span style="color:red">CODE PATTERN IN PROGRESS.<br/> DO NOT TRY TO COMPLETE.</span>
+# **![#f03c15](CODE PATTERN IN PROGRESS.<br/> DO NOT TRY TO COMPLETE.)**
 
 # z/OS Connect & API Connect Code Pattern for Summit Health
 
