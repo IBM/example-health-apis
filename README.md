@@ -149,7 +149,25 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
   ![Creating an API Connect Instance](doc/source/images/CreatAPIConnectInstance.gif)
 
-## 9) Connect z/OS Connect REST APIs to API Connect
+## 9) Importing and Managing an API from z/OS Connect in API Connect
+
+### Pre-requisites
+
+This part assumes that an API has been created using z/OS Connect. The requirements for managing the API using API Connect are:
+
+1. An IBM Cloud Account
+2. The API Connect Feature enabled on the IBM Could Account
+3. Access to the API description file (swagger.json) ass0ciated with the API or the URL and credentials to reach the API description document online.
+
+### Background
+
+The screen shots used in this part are based on a IBM Cloud hosted instance of API Connect and will be calling a previously created API (that was created with z/OS Connect).
+
+Below is a pictorial view of z/OS Connect and API Connect working together. The green boxes represent Open API Specification (aka Swagger) documents.
+
+![API Connect Diagram](doc/source/images/APIConnetDiagram.png)
+
+### Steps
 
 - Login to you IBM Cloud account if you are not already logged in.
 
