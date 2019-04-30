@@ -25,9 +25,15 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 # Steps
 
-1. [Install z/OS Connect](#1.installz/osconnect)
-2. Create a z/OS Connect Project
-3. Create the DB2 database and tables
+1. [Install z/OS Connect](#1.-install-z/os-connect)
+2. [Create a z/OS Connect Project](#2.-create-a-z/os-connect-project)
+3. [Create the DB2 database and tables](#3.-create-the-db2-database-and-tables)
+4. [Populate DB2 database with Synthea data](#4.-populate-db2-database-with-synthea-data)
+5. [Expose DB2 data through z/OS Connect](#5.-expose-db2-data-through-z/os-connect)
+6. [Create CICS Application](#6.-create-cics-application)
+7. [Expose CICS Application data through z/OS Connect](#7.-expose-cics-application-data-through-z/os-connect)
+8. [Create API Connect Instance](#8.-create-api-connect-instance)
+9. [Importing and Managing an API from z/OS Connect in API Connect](#9.-importing-and-managing-an-api-from-z/os-connect-in-api-connect)
 
 ## 1. Install z/OS Connect
 
@@ -117,13 +123,13 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 - The commands for creating the database tables are listed in this [PDF](doc/source/CreateTableStatements.pdf)
 
-## 4) Populate DB2 database with Synthea data
+## 4. Populate DB2 database with Synthea data
 
 - Visit this [code pattern](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/) for the instructions on populating your DB2 database with data from the Synthea tool
 
-## 5) Expose DB2 data through z/OS Connect
+## 5. Expose DB2 data through z/OS Connect
 
-## 6) Create CICS Application
+## 6. Create CICS Application
 
 - A sample CICS application is included in this code pattern. The application is known as HCAZ. It is a simple CICS application for inputing and retrieving healthcare information.
 
@@ -131,9 +137,9 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 - The source code includes JCL files to install the application. Some changes may need to be made to the JCL depending on your installation. If you have any questions ask your organization's zSystem Programmer or a zSystem Developer.
 
-## 7) Expose CICS Application data through z/OS Connect
+## 7. Expose CICS Application data through z/OS Connect
 
-## 8) Create API Connect Instance
+## 8. Create API Connect Instance
 
 - Create an IBM Cloud Account
 
@@ -155,7 +161,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
   ![Creating an API Connect Instance](doc/source/images/CreatAPIConnectInstance.gif)
 
-## 9) Importing and Managing an API from z/OS Connect in API Connect
+## 9. Importing and Managing an API from z/OS Connect in API Connect
 
 ### Pre-requisites
 
