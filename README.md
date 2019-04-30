@@ -1,3 +1,5 @@
+# <span style="color:red">CODE PATTERN IN PROGRESS.<br/> DO NOT TRY TO COMPLETE.</span>
+
 # z/OS Connect & API Connect Code Pattern for Summit Health
 
 This code pattern shows you how to expose data from a DB2 database and a CICS application through z/OS Connect and then create APIs to access that data with API Connect.
