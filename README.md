@@ -140,7 +140,8 @@ This is how your APIs will be routed from your backend systems to a developer fr
 - Creating a DB2 Service
 
   - To verify that REST Services have been installed on your system, you can enter this into the address for your browser: [http://my.db2.ip.addr:port/services/](http://my.db2.ip.addr:port/services/). There will be a result on the screen showing something like the box below:<br/>
-    ![DB2 Service Install Check](doc/source/images/DB2ServiceInstallCheck.png)
+    ![DB2 Service Install Check](doc/source/images/DB2ServiceInstallCheck.png)<br/>
+    _REST services for DB2 are defined either using a DB2 provided REST administrative service (DB2ServiceManager) or by using the DB2 BIND command using an update provided in DB2 PTF UI51748. There instructions walk through doing so using the RESTful administrative service._
 
 ## 6. Create CICS Application
 
