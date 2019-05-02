@@ -143,6 +143,28 @@ This is how your APIs will be routed from your backend systems to a developer fr
     ![DB2 Service Install Check](doc/source/images/DB2ServiceInstallCheck.png)<br/>
     _REST services for DB2 are defined either using a DB2 provided REST administrative service (DB2ServiceManager) or by using the DB2 BIND command using an update provided in DB2 PTF UI51748. There instructions walk through doing so using the RESTful administrative service._
 
+  - Open the REST Client tool of your choice (for example, we will be usign a Firefoc browser plug-in).
+
+  - Choose the Header with a **Content-Type** of **application/json**
+    ![REST Client Request Header](doc/source/images/RESTClientRequestHeader.png)
+
+  - Choose the POST method and use the url <br/> http://my.db2.ip.addr:port/services/DB2ServiceManager
+
+  - Modify the following stanza with the values for your service and paste it into the Body section (be sure to keep the requestType as "createService"):
+    ![Modified Stanza](doc/source/images/ModifiedStanza.png)
+
+  - Click **SEND**
+    ![Click SEND](doc/source/images/ClickSEND.png)
+
+  - If the command works, you will get an HTTP 201 response (which means that the call was successful and something was created).
+
+  - In the Response, the new url for the service you created will be listed.
+    ![RequestResponseForNewService](doc/source/images/RequestResponseForNewService.png)
+
+  - You have just created a service.
+
+        - Note: If you want to verify that the service exists later, you can use that same url that was listed in the verification step (http://my.db2.ip.addr:port/services/) to show you the services that exist on your DB2 system.
+
 ## 6. Create CICS Application
 
 - A sample CICS application is included in this code pattern. The application is known as HCAZ. It is a simple CICS application for inputing and retrieving healthcare information.
