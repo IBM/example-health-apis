@@ -180,7 +180,60 @@ This is how your APIs will be routed from your backend systems to a developer fr
     If you made a mistake when you created your service or need to delete it for any reason, modify the stanza below and follow the first 5 parts of the Creating a DB2 Service step.
     ![Deleting a DB2 Service](doc/source/images/DeletingADB2Service.png)
 
-## 6. Create CICS Application
+- ### Creating a .sar file
+
+  - In order to turn your new service into an API using z/OS Connect, the service needs to have a Service Archive (.sar) file. The .sar file has the json request and response sechemas for the service as well as information about invoking it. <br/><br/> To create the .sar file for a DB2 service, the **z/OS Connect Build Toolkit** utility (**zconbt**) must be used. The utility can be installed on z/OS or on a Windows workstation. There instructions walk through using it on Windows.
+
+  - #### Installing the Build Toolkit
+
+    Locate the zconbt.zip file and unzip it into the directory of your choice. (That's all you need to do.) Make note of the directory where you unzipped it for future reference.
+    ![Installing the Build ToolKit 1](doc/source/images/InstallingTheBuildToolkit1.png)
+    ![Installing the Build ToolKit 2](doc/source/images/InstallingTheBuildToolkit2.png)
+
+  - #### Creating the files needed for the Build Toolkit
+
+    - There are three files that are used by the build toolkit to create the .sar file - a properties file, a json request file and a json response file.
+
+      - The json request and json response files must be created manually. This is done by copying the json request and repsonse schema entries from the service description.
+
+      - The properties file can be created by copying a sample file and editing it.
+
+    - Open a browser and start the REST Client plugin.
+
+    - Use the header with Content-type of application/json and choose the **GET** method.
+
+    - Place the url for invoking the service in the URL field and click **SEND**. (Make sure the Body area of the form is blank.)
+      ![CreatingTheFilesForBuildToolKit1](doc/source/images/CreatingTheFilesForBuildToolkit1.png)
+
+    - Creatign the json files
+
+      - The json information for the request and response is in the response body for the invoked call. Select the entire area behind the words **"Request Schema"**: (including brackets) and **Copy** it.
+        ![JSON Info in Response Body](doc/source/images/JSONInfoInResponseBody.png)
+
+      - On your workstation, open a blank document (such as notepad) and **paste** the text into it.
+        ![Paste Text Into Notepad](doc/source/images/PasteTextIntoNotepad.png)
+
+      - Choose/create a destination folder and **Save** the document as **\<serviceName>Request.json**
+        ![Save Your JSON](doc/source/images/SaveYourJSON.png)
+
+      - Return to the browser and select the area behind the words "**Response Schema":** (including brackets) **Copy** it.
+
+      - On your workstation, open a blank document (such as notepad) and **paste** the text into it.
+
+      - Choose a destination folder and **Save** the document as **\<serviceName>Response.json**
+        _Note: you can either save these files in the zconbt/bin directory or include the path to the directory when creating your properties file._
+
+    - Now, it's time to create the properties file.
+
+      - _You can find a sample properties file in the \<path to zconbt>/samples/service folder. The correct one for DB2 rest service is named sample_restClient_sar.properties_
+        ![Sample Propertiesf File Location](doc/source/images/SamplePropertiesFileLocation.png)
+
+      - If you are doing this for the firs time, **right click** on the **sample_restClient_sar.properties** file and choose **Open With**. It is recommended the you use WordPad (easiest method to view/edit).
+
+      - In the sample file, definitions of the fields are listed.
+        ![Editing the Sample Properties File](doc/source/images/EditingSamplePropertiesFile.png)
+
+## 6. Crealte CICS Application
 
 - A sample CICS application is included in this code pattern. The application is known as HCAZ. It is a simple CICS application for inputing and retrieving healthcare information.
 
