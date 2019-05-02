@@ -8,6 +8,11 @@ This work was done as part of the Summit Health set of code patterns, which demo
 
 This code pattern is for people with an intermediate understand and experience working with Z Systems, z/OS and tools like z/OS Explorer.
 
+When the reader has completed this code pattern, they will understand how to:
+
+- Use z/OS Connect to expose CICS and DB2 Data with REST APIs
+- Use API Connect to manage your APIs and create a portal for developers to access them
+
 ### Pre-requisites
 
 - In order to create a DB2 RESTful servoce, the system pre-requisite is to have DB2 v11 or v12 with associated PTFs for REST API support. (Info on APARs here:<br/> http://www-01.ibm.com/support/docview.wss?uid=isg1II14827 )
@@ -15,11 +20,6 @@ This code pattern is for people with an intermediate understand and experience w
 - The Service Creator will also need to hace some sort of REST client tool. That can be in the form of a browser plug-in (such as Rest Client for Firefox or Advanced Rest Client for Chrome) or a desktop too such as SoapUI.
 
 - The **z/OS Connect Build Toolkit** will be needed for the .sar file generation. This tool can be run either on the mainframe (omvs) or in a Windows command interface. These instractions do so on Windows. <br/> The build toolkit is packaged as a zip file and cab be obtained here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
-
-When the reader has completed this code pattern, they will understand how to:
-
-- Use z/OS Connect to expose CICS and DB2 Data with REST APIs
-- Use API Connect to manage your APIs and create a portal for developers to access them
 
 ## Flow
 
@@ -136,6 +136,11 @@ This is how your APIs will be routed from your backend systems to a developer fr
 - Visit this [code pattern](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/) for the instructions on populating your DB2 database with data from the Synthea tool
 
 ## 5. Expose DB2 data through z/OS Connect
+
+- Creating a DB2 Service
+
+  - To verify that REST Services have been installed on your system, you can enter this into the address for your browser: [http://my.db2.ip.addr:port/services/](http://my.db2.ip.addr:port/services/). There will be a result on the screen showing something like the box below:<br/>
+    `{"DB2Services": [ {"ServiceName": "DB2ServiceDiscover", "ServiceCollectionID": null, "ServiceDescription": "DB2 service to list all available services.", "ServiceProvider": "db2service-1.0", "ServiceURL": "http:// my.db2.ip.addr:port/services/DB2ServiceDiscover" }, {"ServiceName": "DB2ServiceManager", "ServiceCollectionID": null, "ServiceDescription": "DB2 service to create, drop, or alter a user defined service.", "ServiceProvider": "db2service-1.0", "ServiceURL": "http:/ my.db2.ip.addr:port/services/DB2ServiceManager" } ]}`
 
 ## 6. Create CICS Application
 
