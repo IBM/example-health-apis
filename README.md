@@ -8,6 +8,14 @@ This work was done as part of the Summit Health set of code patterns, which demo
 
 This code pattern is for people with an intermediate understand and experience working with Z Systems, z/OS and tools like z/OS Explorer.
 
+### Pre-requisites
+
+- In order to create a DB2 RESTful servoce, the system pre-requisite is to have DB2 v11 or v12 with associated PTFs for REST API support. (Info on APARs here:<br/> http://www-01.ibm.com/support/docview.wss?uid=isg1II14827 )
+
+- The Service Creator will also need to hace some sort of REST client tool. That can be in the form of a browser plug-in (such as Rest Client for Firefox or Advanced Rest Client for Chrome) or a desktop too such as SoapUI.
+
+- The **z/OS Connect Build Toolkit** will be needed for the .sar file generation. This tool can be run either on the mainframe (omvs) or in a Windows command interface. These instractions do so on Windows. <br/> The build toolkit is packaged as a zip file and cab be obtained here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
+
 When the reader has completed this code pattern, they will understand how to:
 
 - Use z/OS Connect to expose CICS and DB2 Data with REST APIs
@@ -37,7 +45,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 ## 1. Install z/OS Connect
 
-- Please refer to the Installation and Initial Setup section of this [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf) on how to install z/OS Connect. Go to page 8 for information on installation.
+- Please refer to the **Installation and Initial Setup** section of this [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf) on how to install z/OS Connect. Go to page 8 for information on installation.
 
 ## 2. Create a z/OS Connect Project
 
