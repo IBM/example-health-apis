@@ -137,7 +137,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 ## 5. Expose DB2 data through z/OS Connect
 
-- Creating a DB2 Service
+- ### Creating a DB2 Service
 
   - To verify that REST Services have been installed on your system, you can enter this into the address for your browser: [http://my.db2.ip.addr:port/services/](http://my.db2.ip.addr:port/services/). There will be a result on the screen showing something like the box below:<br/>
     ![DB2 Service Install Check](doc/source/images/DB2ServiceInstallCheck.png)<br/>
@@ -165,7 +165,9 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
     _Note: If you want to verify that the service exists later, you can use that same url that was listed in the verification step (http://my.db2.ip.addr:port/services/) to show you the services that exist on your DB2 system._
 
-  - Testing a DB2 Service<br/> If you want to see if this service call works, you can do so with the REST client.
+  - #### Testing a DB2 Service
+
+    If you want to see if this service call works, you can do so with the REST client.
 
     - Make sure to use the POST method and the Header with Content-Type of application/json
     - Copy the url for the service and paste it into the URL field (you can get this from the listing of services using the note above)
@@ -173,7 +175,10 @@ This is how your APIs will be routed from your backend systems to a developer fr
     - Click SEND
       ![Testing A DB2 Service](doc/source/images/TestingADB2Service.png)
 
-  - Deleteing a DB2 Service<br/> If you made a mistake when you created your service or need to delete it for any reason, modify the stanza below and follow the first 5 parts of the Creating a DB2 Service step.
+  - #### Deleteing a DB2 Service
+
+    If you made a mistake when you created your service or need to delete it for any reason, modify the stanza below and follow the first 5 parts of the Creating a DB2 Service step.
+    ![Deleting a DB2 Service](doc/source/images/DeletingADB2Service.png)
 
 ## 6. Create CICS Application
 
