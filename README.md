@@ -233,6 +233,29 @@ This is how your APIs will be routed from your backend systems to a developer fr
       - In the sample file, definitions of the fields are listed.
         ![Editing the Sample Properties File](doc/source/images/EditingSamplePropertiesFile.png)
 
+      - Edit the sample file to match the specifications for your new service. Guidance is included in the sample file. Some additional notes:
+
+        - The service name shoould be the same as the name of the service from the "Creating a DB2 Service" part.
+        - For consistency, the json request and response files should be named \<serviceName>\_request.json and \<serviceName>\_response.json
+        - You can obtain portions of this value from your service URL that was called earlier during testing. Commonly, this would be /service/serviceName.
+        - This value is your choice, but will also be used in the server.xml file.
+
+      - Chhose **File** -> **Save As** and save the file with a new name. _Note the folder where you saved the file for use in the zconbt script._
+        - _Note: Place this file in the same folder as the json files or include the path to the .json files in the properties file._
+
+    - Run the zconbt tool to generate the .sar file.
+
+      - Open a DOS command prompt in Adminstrator Mode.
+
+      - Use the change directory command to go to directory \<path to zconbt>\bin
+
+      - Run the command: <br/>
+        `zconbt --properties=<path to properties file>\<properties file name> --file=<path to sar file>\<sar file name>`
+        <br/>_It is recommended to name your sar file \<serviceName>.sar_
+        ![Command Prompt zconbt](doc/source/images/CommandPromptZCONBT.png)
+
+      - If you get a response like "Successfully created service", then your .sar file is created. You are now ready to move to API creation.
+
 ## 6. Crealte CICS Application
 
 - A sample CICS application is included in this code pattern. The application is known as HCAZ. It is a simple CICS application for inputing and retrieving healthcare information.
