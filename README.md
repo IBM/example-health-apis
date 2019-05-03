@@ -254,7 +254,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
         <br/>_It is recommended to name your sar file \<serviceName>.sar_
         ![Command Prompt zconbt](doc/source/images/CommandPromptZCONBT.png)
 
-      - If you get a response like "Successfully created service", then your .sar file is created. You are now ready to move to API creation.
+    - If you get a response like "Successfully created service", then your .sar file is created. You are now ready to move to API creation.
 
 ## 6. Crealte CICS Application
 
