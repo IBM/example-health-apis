@@ -120,3 +120,83 @@
     - If you get a response like "Successfully created service", then your .sar file is created. You are now ready to move to API creation.
 
 - ## Creating the API
+
+  - So far, you have created your DB2 REST Service and the Service Archive File that describes the service. As a reminder, a REST Service can only do the POST method. To provide additional functionality, we will be creating a REST API.
+
+    - _To create the API, you need to have the z/OS Connect REST API Toolkit installed. This is an Eclipse plug-in that can be obtained here: http://ibm.biz/zosconnect-tooling-download
+      <br/>These instructions assume that the z/OS Connect API Toolkit is already installed and ready to use._
+
+  - ### Create a new API Project in the API Toolkit.
+
+    - Start Eclipse and choose the z/OS Connect Perspective
+      ![z/OS Connect Perspective Button](doc/source/images/zOSConnectPerspectiveButton.png)
+
+    - Choose **File -> New -> Project**
+      ![z/OS Connect New Project](doc/source/images/zOSConnectProjectButton.png)
+
+    - At the popup window, choose **z/OS Connect API Project**
+      ![Popup z/OS Connect API Project](doc/source/images/PopupChoosezOSConnectAPIProject.png)
+
+    - Enter your choice of values for the fields (with some guidance below)
+
+      - **Project Name** with just be the name of the collection that appears in the Project Explorer area. It does not relate to the API function.
+      - In **API name**, the value is typically the same as the Service name in the .properties file (Marked with an "a" in the "Creating a .sar file section)
+      - In **Base Path**, enter a value relevant to the API call you are making. This will be a permanent part of the API.
+        ![z/OS Connect API Project Properties](doc/source/images/zOSConnectAPIProjectProperties.png)
+
+    - A tab should appear in the center section of the window. You have now created a Project.
+      ![Project Created Page](doc/source/images/ProjectCreatedPage.png)
+
+  - ### Import .sar file into the API Toolkit.
+
+    - In order to create an API, the tool must first have the artifacts for the service. Those artifacts have been bundled into a .sar file using the Build Toolkit and must now be imported into the workspace.
+
+    - Remaining in the z/OS Connect Perspective, right click on the API name listed in Project Explorer. Then choose **z/OS Connect EE -> Import z/OS Connect EE Services**
+      ![Import a z/OS Connect Service](doc/source/images/ImportzOSConnectService.png)
+
+    - A window will pop up. Click the **File System** button.
+      ![Click the File System Button](doc/source/images/FileSystemButton.png)
+
+    - Navigate to the location where you saved the .sar file. Choose it and click **Open**
+
+    - In the Import Service window, click **OK**
+      ![Import Service Window](doc/source/images/ImportServiceWindow.png)
+
+    - In the Import z/OS Connect EE Services window, click OK. You will then be returned to the blank project.
+      ![Import z/OS Connect EE Services Window](doc/source/images/ImportzOSConnectEEServicesWindow.png)
+
+  - ### Begin creating the API
+
+    - Click the red **X** next to the methods you don't plan to use.
+      ![Delete X for API Methods](doc/source/images/DeleteXAPIMethods.png)
+
+    - Under **Path**, begin creating your URI parameters that will be called. (A clue for this may be found in the json request schema. What field is being passes?)
+      ![API URI Setup](doc/source/images/APIURISetUp.png)
+
+    - Click the **Service** button to associate the service you created earlier with this API call.
+
+    - A pop up window will appear. Your service will likely be listed. If so, click it and then click **OK**.
+      ![URI Popup Window](doc/source/images/URIPopupWindow.png)
+
+    - Save what you have so far by holding **CTRL** and **S** keys
+
+    - Click the Mapping -> Open Request Mapping to begin matching fields in your API path to the fields in your service.
+      ![Open Request Mapping Button](doc/source/images/OpenRequestMappingButton.png)
+
+    - Now, click the path field on the left and hold the mouse button down as you drag the cursor over the matching value on the right. A line should appear as you do this. When the field on the right blinks yellow, you can let go. The "wire" should remain with the word "Move" in the middle. Now your fields are matched. Continue doing this for each of the fields in your reqest path.
+
+      - _Refer to additional [z/OS Connect Toolkit documentation](https://www.ibm.com/support/knowledgecenter/en/SS4SVW_beta/designing/api_mapping_editor.html) for additional operations such as assigning values to fields and removing fields._
+        ![API Mapping Tool](doc/source/images/APIMappingTool.png)
+
+    - When you have made all the connections, **Save** (CTRL+S) your mapping. Close the tab for the mapping.
+
+    - If you are returning all the fields of your query, then you dont need to do anything to your Response mapping.
+
+      - _Refer to additional z/OS Connect Toolkit documentation for addiational operations such as removing fields_
+
+    - You have now created the API. Next, deploy your API to the z/OS Connect Server.
+
+* ### Deploy the API to the z/OS Connect Server
+
+  - In the _Projects Explorer_ view (left), right-mouse click on the project folder, then select **z/OS Connect EE -> Deploy API to z/OS Connect EE Server**.
+    ![Deploy to Server Menu](doc/source/images/DeployToServerMenu.png)
