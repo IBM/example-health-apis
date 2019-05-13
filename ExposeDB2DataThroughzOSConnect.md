@@ -202,3 +202,61 @@
       ![Deploy to Server Menu](doc/source/images/DeployToServerMenu.png)
 
     - A popup window will appear for you to choose the server for deployment. <br/> _(If the icon next to the sever name is green, then you are connect to the server and will be able to deploy. If not, click on the icon to connect.)_ <br/> Confirm the API name and other information and click **OK**.
+      ![API Deployment Popup](doc/source/images/APIDeploymentPopup.png)
+
+    - A confirmation window will appear. Click **OK**.
+      ![DeploymentConfirmationPopup](doc/source/images/DeploymentConfirmationWindow.png)
+      - _The .aar file for the API has automatically been generated and placed in the right location in the z/OS Connect file system for use._
+
+* ## Registering the Service and the API in the z/OS Connect Server
+
+  - In order to run your DB2-based API on z/OS Connect, some entries must be made in the **server.xml** file. These entries describe the service and API names and URIs.
+
+    - _Note: This step will likely be done by the person who created the z/OS Connect Server, and not the person creating the API. It may be beneficial to simply provide the system administrator with the correct values to enter._
+      _For the system administrator: if multiple DB2 APIs will be created, it is recommended to create an xml file dedicated to these resource definitions. Then use an "\<include>" statement in the server.xml to refer to this file._
+      _For more information on \<include>: visit this [link](https://www.ibm.com/support/knowledgecenter/en/SS4SVW_2.0.0/com.ibm.zosconnect.doc/highavailability/split_config_info.html)._
+
+  - Some sample code to add to the server.xml file is below:
+    ![Server.xml Sample Code](doc/source/images/ServerXMLSampleCode.png)
+
+  - Open the server.xml file
+
+  - Add two stanzas like those in the code sample above, customizing for the specific service name and other details about the service and API:
+
+    - a) The invokeURI is often the same as the base path specified in the API creation (it may be the same as the service name).
+    - b) The connectionRefName should match a value that is created by the person who manages the server.xml file. It can be found in the stanza marked \<zosconnect*zosConnectServiceRestClientConnection>. <br/>
+      *(This was also entered in the properties file when creating the .sar)\_
+    - c) The URI should match the one used in the properties file in the "Creating a .sar file" section
+    - d) The default value of the httpMethod is POST. Leave this as is.
+
+  - Save the server.xml file.
+
+  - **You are now ready to test your API.**
+
+  - ### Testing the API using the z/OS Connect API Toolkit
+
+    - Now that you have created your REST service, created your API and deployed your API, you are ready to test the API. <br/> This can be done either using the API Toolkit’s SwaggerUI tooling or using the same REST Client that you used when creating your REST Service. These instructions walk through using the SwaggerUI tooling.
+
+    - Click on the **z/OS Connect Servers** tab (typically in the bottom left corner) and ensure that the icon next to your server is green (![z/OS Connect Server Tab Icon](doc/source/images/ZOSConnectServerTabIcon.png)) indicating that you are connected to the server.
+
+      - **To see the API:** <br/> _Click the triangle next to the APIs folder to see all the folders that are deployed on the server._ <br/> (To get the uri associated with the API, left-click on the API name and a tab will appear to the right. You can use this uri with the tool of your choice.)
+        ![To See the APIs](doc/source/images/ToSeeTheAPIs.png)
+
+    - **Testing the API:**
+
+      - Right click on the API name and a popup menu will appear. Choose **Open In SwaggerUI**.
+        ![OpenInSwaggerUI](doc/source/images/OpenInSwaggerUI.png)
+
+      - A new tab will appear on the right
+        ![Swagger UI Tab](doc/source/images/SwaggerUITab.png)
+
+      - Click **Expand Operations** <br/> Scroll down, and you will see the area where you can input sample values
+        ![InputSampleValues](doc/source/images/InputSampleValues.png)
+
+      - Enter a test value, scroll down the page and click the TRY IT OUT button
+        ![Try It Out Button](doc/source/images/TryItOutButton.png)
+
+      - Scroll down and Response content can be found.
+        ![ResponseContentExample](doc/source/images/ResponseContentExample.png)
+
+**If the test is successful, you are done!**
