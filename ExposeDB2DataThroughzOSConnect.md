@@ -196,7 +196,9 @@
 
     - You have now created the API. Next, deploy your API to the z/OS Connect Server.
 
-* ### Deploy the API to the z/OS Connect Server
+  * ### Deploy the API to the z/OS Connect Server
 
-  - In the _Projects Explorer_ view (left), right-mouse click on the project folder, then select **z/OS Connect EE -> Deploy API to z/OS Connect EE Server**.
-    ![Deploy to Server Menu](doc/source/images/DeployToServerMenu.png)
+    - In the _Projects Explorer_ view (left), right-mouse click on the project folder, then select **z/OS Connect EE -> Deploy API to z/OS Connect EE Server**.
+      ![Deploy to Server Menu](doc/source/images/DeployToServerMenu.png)
+
+    - A popup window will appear for you to choose the server for deployment. <br/> _(If the icon next to the sever name is green, then you are connect to the server and will be able to deploy. If not, click on the icon to connect.)_ <br/> Confirm the API name and other information and click **OK**.
