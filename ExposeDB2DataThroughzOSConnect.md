@@ -201,10 +201,10 @@
     - In the _Projects Explorer_ view (left), right-mouse click on the project folder, then select **z/OS Connect EE -> Deploy API to z/OS Connect EE Server**.
       ![Deploy to Server Menu](doc/source/images/DeployToServerMenu.png)
 
-    - A popup window will appear for you to choose the server for deployment. <br/> _(If the icon next to the sever name is green, then you are connect to the server and will be able to deploy. If not, click on the icon to connect.)_ <br/> Confirm the API name and other information and click **OK**.
+    - A popup window will appear for you to choose the server for deployment. <br/> _(If the icon next to the sever name is green, then you are connect to the server and will be able to deploy. If not, click on the icon to connect.)_ <br/> Confirm the API name and other information and click **OK**. <br/>
       ![API Deployment Popup](doc/source/images/APIDeploymentPopup.png)
 
-    - A confirmation window will appear. Click **OK**.
+    - A confirmation window will appear. Click **OK**. <br/>
       ![DeploymentConfirmationPopup](doc/source/images/DeploymentConfirmationWindow.png)
       - _The .aar file for the API has automatically been generated and placed in the right location in the z/OS Connect file system for use._
 
