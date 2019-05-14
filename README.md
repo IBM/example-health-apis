@@ -149,6 +149,8 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 ## 7. Expose CICS Application data through z/OS Connect
 
+- [Click this link to go to the steps for exposing CICS data through z/OS Connect](ExposeCICSApplicationDataThroughzOSConnect.md)
+
 ## 8. Create API Connect Instance
 
 - Create an IBM Cloud Account
