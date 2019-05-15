@@ -99,7 +99,7 @@
      
      If you get the correct data in your response, your service works.
 
-    - You have verified that your newly created inquireSingle service works to CICS.
+    - You have verified that your newly created inquireSingle service works CICS.
     
 - ## Creating a CICS API
 
