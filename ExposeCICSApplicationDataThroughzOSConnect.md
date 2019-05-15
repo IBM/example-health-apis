@@ -20,7 +20,11 @@
 
   - In the service project editor, take the following steps:
 
-    -
+    - Optionally, change the version number from the default of 1.0.0.
+
+    - Specify the program for CICS.
+
+    - Define the request and response service interfaces. The service interfaces are defined by importing COBOL copybooks,PL/I include files, or full programs and customizing the interfaces. For more information, see [Defining the request and response service interfaces](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/designing/service_compose_interface.html?view=kc).
 
 * ## IPIC Connection Configuration
 
