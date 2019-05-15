@@ -1,6 +1,28 @@
 # 7. Expose CICS Application data through z/OS Connect
 
-- ## IPIC Connection Configuration
+- ## Creating a Service
+
+  - Switch to the z/OS Connect Enterprise Edition perspective in your Eclipse environment.
+
+    - From the main menu, select **Window > Open Perspective > Other**. The Select Perspective wizard opens.
+
+    - Select **z/OS Connect Enterprise Edition**.
+
+  - Select **File > New > Project**. The New Project wizard opens.
+
+  - Select **z/OS Connect Enterprise Edition > z/OS Connect EE Service Project**, and click **Next**.
+
+  - Specify a project name, select the project type, and optionally provide a description.
+
+    - Select **CICS COMMAREA Service** for the project type.
+
+  - Click **Finish** to create the project. <br/> The service project is created in the Project Explorer view. The service.properties file opens in the service project editor in a tab that is named after the service project. This service project editor is where you can configure the service and define the service interface. Initially, errors (![Error Red X](doc/source/images/ErrorRedX.png)) are reported and highlighted for information that is required and must be specified. Depending on the service type, required information varies. <br/> _The service project editor_ <br/>![The service project Editor](doc/source/images/ServiceProjectEditor.png) <br/> The **Actions** pane highlights the steps to create a service.
+
+  - In the service project editor, take the following steps:
+
+    -
+
+* ## IPIC Connection Configuration
 
   - Define a TCPIPService to listen for inbound IPIC requests in your CICS region. This scenario uses a port value of 1091. For more information about defining a TCPIPService for inbound IPIC requests, see [Configuring the IPIC connection](https://www.ibm.com/support/knowledgecenter/SSGMCP_5.4.0/applications/developing/java/dfhpj2_jca_remote_eci_ipicconfig.html) in the _CICS Transaction Server_ documentation.
 
@@ -28,3 +50,7 @@
       \<httpEndpoint id="defaultHttpEndpoint" host="\*" httpPort="9080" httpsPort="-1"/>
 
     - Enable security if required.
+
+* ## Test the IPIC Connection
+
+  -
