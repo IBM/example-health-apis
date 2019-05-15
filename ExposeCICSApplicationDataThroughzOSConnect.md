@@ -6,4 +6,10 @@
 
   - Use the following command to create a server:
 
-  `zosconnect create catalogManager --template=zosconnect:sampleCicsIpicCatalogManager`
+```
+zosconnect create catalogManager --template=zosconnect:sampleCicsIpicCatalogManager
+```
+
+    - The following artifacts are created:
+
+      - A catalog API service archive file, catalog.aar, in the directory <WLP_USER_DIR>/servers/catalogManager/resources/zosconnect/apis.
