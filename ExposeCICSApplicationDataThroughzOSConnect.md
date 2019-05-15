@@ -128,7 +128,7 @@
     - If the fields are succesfully matched, a blue box with the word "Move" will appear.
     - Continue doing this for all the fields in your request.
     
-    <br/>![Mapping Request Fields](doc/source/images/mapping.png) <br/> 
+    <br/>![Mapping Request Fields](doc/source/images/mapping.PNG) <br/> 
     
   - From the menu bar, select File > Save.
   - Click the "Response" tab to show the request mapping editor. If you want to return all the values, you do not have to do anything here.
