@@ -127,6 +127,9 @@
   - Click the "Request" tab to show the request mapping editor.  Connect the path/query parameter to the matching CICS parameter by dragging from the path/query parameter on the left to the JSON property on the right
     - If the fields are succesfully matched, a blue box with the word "Move" will appear.
     - Continue doing this for all the fields in your request.
+    
+    <br/>![Mapping Request Fields](doc/source/images/mapping.png) <br/> 
+    
   - From the menu bar, select File > Save.
   - Click the "Response" tab to show the request mapping editor. If you want to return all the values, you do not have to do anything here.
   - From the menu bar, select File > Save.
