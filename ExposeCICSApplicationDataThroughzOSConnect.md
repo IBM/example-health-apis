@@ -21,6 +21,31 @@
 
     - Save the file.
 
-- ## Install the Catalog Manager Sample in the CICS region
+- ## Setup of IPIC support in a CICS region
 
-  - For this document we are using the CICS "catalog manager" sample application. This application simulates an office supplies store application. It is useful for illustrating z/OS Connect EE because it is plausibly "real world" while not being overly-complex. <br/> The details of this CICS sample application are provided here: <br/> https://www.ibm.com/support/knowledgecenter/SSGMCP_5.4.0/applications/example-application/dfhxa_t100.html <br/> Work with the CICS administrator and do the following:
+  - Adding support for IPIC in a CICS region is quite simple. First, the CICS region must have:
+
+    - TCPIP=YES and
+    - ISC=YES
+
+    Specified as system initialization parameters at CICS startup.
+
+  - Finally, a CICS _TCPIPService_ needs to be defined and installed in the CICS region. This resource identifies which port the CICS region will listen on for inbound IPIC requests.
+
+  - This resource should have these attributes:
+
+    | **TCPIPService resource attribute** | **Value required**                              |
+    | :---------------------------------- | :---------------------------------------------- |
+    | URM                                 | DFHISAIP                                        |
+    | Port Number                         | A numeric value of an available port, e.g. 1491 |
+    | Status                              | OPEN                                            |
+    | Protocol                            | IPIC                                            |
+    | Transaction                         | CISS                                            |
+
+- ## Developing RESTful Services for CICS
+
+  - Once the IPIC configuration is completed follow the instructions for the development and deployment of services in the Developing RESTful APIs for CICS document at URL [https://github.com/ibmwsc/zCONNEE-Wildfire-Workshop](https://github.com/ibmwsc/zCONNEE-Wildfire-Workshop). This document shows how to develop and deploy CICS services as well as showing how to develop and deploy APIs that consume these services. For the purposes of this document we are only interested in deploying and testing services, but feel free to develop and test APIs also.
+
+- ## Test the Services
+
+  - If you have followed the instructions in Developing RESTful APIs for CICS you should have at least 3 services deployed to the server. These services are inquireSingle, inquireCatalog and placeOrder. The services can be used to test connectivity to CICS from the z/OS Connect server. The services and infrastructure should be tested before developing an API to ensure the infrastructure and the request and response messages are as expected.
