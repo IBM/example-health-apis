@@ -15,11 +15,11 @@ When the reader has completed this code pattern, they will understand how to:
 
 ### Pre-requisites
 
-- In order to create a DB2 RESTful servoce, the system pre-requisite is to have DB2 v11 or v12 with associated PTFs for REST API support. (Info on APARs here:<br/> http://www-01.ibm.com/support/docview.wss?uid=isg1II14827 )
+- In order to create a DB2 RESTful service, the system pre-requisite is to have DB2 v11 or v12 with associated PTFs for REST API support. (Info on APARs here:<br/> http://www-01.ibm.com/support/docview.wss?uid=isg1II14827 )
 
-- The Service Creator will also need to hace some sort of REST client tool. That can be in the form of a browser plug-in (such as Rest Client for Firefox or Advanced Rest Client for Chrome) or a desktop too such as SoapUI.
+- The Service Creator will also need to have some sort of REST client tool. That can be in the form of a browser plug-in (such as Rest Client for Firefox or Advanced Rest Client for Chrome) or a desktop too such as SoapUI.
 
-- The **z/OS Connect Build Toolkit** will be needed for the .sar file generation. This tool can be run either on the mainframe (omvs) or in a Windows command interface. These instractions do so on Windows. <br/> The build toolkit is packaged as a zip file and cab be obtained here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
+- The **z/OS Connect Build Toolkit** will be needed for the .sar file generation. This tool can be run either on the mainframe (omvs) or in a Windows command interface. These instructions do so on Windows. <br/> The build toolkit is packaged as a zip file and cab be obtained here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
 
 ## Flow
 
@@ -70,7 +70,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
 |     Project name     |                                        Unique alphanumeric name for your project. This is the name of the project in Eclipse.                                        | A name that relates to the info you are trying to see. |
 |       API name       |                                   The name of your API. This is the name by which the z/OS Connect EE server knows about this API.                                   |                    showpatientinfo.                    |
 |      Base path       | The unique basePath attribute that specifies the root of all the resources in this API. This path is used by REST clients in the URI they send in to invoke the API. |                    /showPatientInfo                    |
-|     Description      |                                           Optional field to provide a description of this API for documentation purposes.                                            |               "Retrieves pateient info."               |
+|     Description      |                                           Optional field to provide a description of this API for documentation purposes.                                            |               "Retrieves patient info."                |
 
 - [Source](https://www.ibm.com/support/knowledgecenter/en/SS4SVW_2.0.0/com.ibm.zosconnect.doc/scenarios/ims_create_api.html)
 
@@ -139,9 +139,9 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 - [Click this link to go to the steps for exposing DB2 data through z/OS Connect](ExposeDB2DataThroughzOSConnect.md)
 
-## 6. Crealte CICS Application
+## 6. Create CICS Application
 
-- A sample CICS application is included in this code pattern. The application is known as HCAZ. It is a simple CICS application for inputing and retrieving healthcare information.
+- A sample CICS application is included in this code pattern. The application is known as HCAZ. It is a simple CICS application for inputting and retrieving healthcare information.
 
 - The source code is included in the [HCAZ_Source](HCAZ_Source) folder.
 
@@ -165,11 +165,11 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
   - From the IBM Cloud Dashboard, click on **Catalog**.
 
-  - In the search bar tyep **"API Connect"** and hit **enter**.
+  - In the search bar type **"API Connect"** and hit **enter**.
 
   - Click on the API Connect card.
 
-  - Name the service. Choose a location to deploy in (Choose the locatino closest to you). Leave the organization and space at the defaults. Scroll down and select the **"Lite"** plan. The click the **Create** button.
+  - Name the service. Choose a location to deploy in (Choose the location closest to you). Leave the organization and space at the defaults. Scroll down and select the **"Lite"** plan. The click the **Create** button.
 
   ![Creating an API Connect Instance](doc/source/images/CreatAPIConnectInstance.gif)
 

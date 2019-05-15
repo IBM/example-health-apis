@@ -6,7 +6,7 @@ This part assumes that an API has been created using z/OS Connect. The requireme
 
 1. An IBM Cloud Account
 2. The API Connect Feature enabled on the IBM Could Account
-3. Access to the API description file (swagger.json) ass0ciated with the API or the URL and credentials to reach the API description document online.
+3. Access to the API description file (swagger.json) associated with the API or the URL and credentials to reach the API description document online.
 
 ## Background
 
@@ -76,15 +76,15 @@ Below is a pictorial view of z/OS Connect and API Connect working together. The 
 
 - Refine the Imported API
 
-  - _You should see a screen similar to the one below. The defualt Title of the API is equivalent to the base path of the imported API._
+  - _You should see a screen similar to the one below. The default Title of the API is equivalent to the base path of the imported API._
 
   ![Refine API](doc/source/images/RefineAPI.png)
 
-  - Provide the Title and Name of your choice or keep the defualts
+  - Provide the Title and Name of your choice or keep the defaults
 
   - In the "Host" section, enter **\$(catalog.host)**
 
-  - Scroll down to the "Schemes" section and uncheck "http"
+  - Scroll down to the "Schemes" section and un-check "http"
 
   ![HostCheck](doc/source/images/HostCheck.png)
 
