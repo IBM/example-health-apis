@@ -44,7 +44,7 @@
 
 - ## Developing RESTful Services for CICS
 
-  - Once the IPIC configuration is completed follow the instructions for the development and deployment of services in the Developing RESTful APIs for CICS document at URL [https://github.com/ibmwsc/zCONNEE-Wildfire-Workshop](https://github.com/ibmwsc/zCONNEE-Wildfire-Workshop). This document shows how to develop and deploy CICS services as well as showing how to develop and deploy APIs that consume these services. For the purposes of this document we are only interested in deploying and testing services, but feel free to develop and test APIs also.
+  - Once the IPIC configuration is completed follow the instructions for the development and deployment of services in the Developing RESTful APIs for CICS document at URL [https://github.com/ibm-wsc/zCONNEE-Wildfire-Workshop/blob/master/Developing%20RESTful%20APIs%20for%20CICS.pdf](https://github.com/ibm-wsc/zCONNEE-Wildfire-Workshop/blob/master/Developing%20RESTful%20APIs%20for%20CICS.pdf). This document shows how to develop and deploy CICS services as well as showing how to develop and deploy APIs that consume these services. For the purposes of this document we are only interested in deploying and testing services, but feel free to develop and test APIs also.
 
 - ## Test the Services
 
