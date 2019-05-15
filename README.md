@@ -6,7 +6,7 @@ This code pattern shows you how to expose data from a DB2 database and a CICS ap
 
 This work was done as part of the Summit Health set of code patterns, which demonstrate how cloud technology can access data stored on z/OS Systems. We needed a way to access the large amounts of data stored on a DB2 database and a CICS application. We used z/OS Connect and API Connect to expose the data through REST APIs. z/OS Connect provides a single, common way to unleash your existing market-differentiating assets on IBM with RESTful APIs. API Connect allows automated API creation, simple discovery of assets, self-service access for developers, and built-in security and governance. z/OS Connect was used first to expose the data from DB2 and CICS as REST APIs. Then API Connect was used to create a way for developers to easily access the APIs through an intuitive portal.
 
-This code pattern is for people with an intermediate understand and experience working with Z Systems, z/OS and tools like z/OS Explorer.
+This code pattern is for people with an intermediate understanding and experience working with Z Systems, z/OS and Eclipse tools like IBM Explorer for z/OS.
 
 When the reader has completed this code pattern, they will understand how to:
 
@@ -17,9 +17,11 @@ When the reader has completed this code pattern, they will understand how to:
 
 - In order to create a DB2 RESTful service, the system pre-requisite is to have DB2 v11 or v12 with associated PTFs for REST API support. (Info on APARs here:<br/> http://www-01.ibm.com/support/docview.wss?uid=isg1II14827 )
 
-- The Service Creator will also need to have some sort of REST client tool. That can be in the form of a browser plug-in (such as Rest Client for Firefox or Advanced Rest Client for Chrome) or a desktop too such as SoapUI.
+- The Service and API Creator will need the z/OS Connect API Toolkit for service (.sar) file generation of CICS services and API (.aar) file generation for CICS and DB2 APIs.
 
-- The **z/OS Connect Build Toolkit** will be needed for the .sar file generation. This tool can be run either on the mainframe (omvs) or in a Windows command interface. These instructions do so on Windows. <br/> The build toolkit is packaged as a zip file and cab be obtained here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
+- The API Creator will also need to have some sort of REST client tool. That can be in the form of a browser plug-in (such as Rest Client for Firefox or Advanced Rest Client for Chrome) or a desktop tool such as Postman or CuRL.
+
+- The **z/OS Connect Build Toolkit** will be needed for the .sar file generation for Db2 services. This tool can be run either on the mainframe (omvs) or in a Windows command interface. These instructions do so on Windows. <br/> The build toolkit is packaged as a zip file and cab be obtained here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
 
 ## Flow
 
@@ -28,8 +30,8 @@ This is how your APIs will be routed from your backend systems to a developer fr
 ![Flow Diagram](doc/source/images/FlowDiagram.png)
 
 1. z/OS Connect exposes the DB2 data through REST APIs
-2. z/OS Connect exposes the CICS application data through REST APIs
-3. API Connect connects to z/OS Connect and establishes a portal for developers to gain access to the APIs
+2. z/OS Connect exposes the CICS application programs/data through REST APIs
+3. API Connect serves as a gateway to z/OS Connect, manages the z/OS Connect APIs and establishes a portal for developers to gain access to the APIs
 
 # Steps
 
@@ -90,7 +92,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 - DB2 Tables:
 
-  - A. There are 12 tables that are used in the entire Summit Application (CICS native and Web):
+  - A. There are 12 tables that are used in the entire Summit Healthcare Application (CICS native and Web):
 
   |   **Table**   |                                                                      **Description**                                                                       |
   | :-----------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -104,7 +106,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
   | BLOODPRESSURE |                                              Log of patient blood pressure when measured at a doctor's visit                                               |
   |    SESSION    |                                                  Log of brain activity measurements taken during analysis                                                  |
   | APPOINTMENTS  |                                  Record of appointments for each patient (including doctor's name, specialty and reason)                                   |
-  |   ALLERGIES   |                                                   List of any allergies a patient has and when they were                                                   |
+  |   ALLERGIES   |                                                   List of any allergies a patient has and when they were diagnosed                                                   |
   | OBSERVATIONS  | Log of patient measurements (such as height and weight), lab results (like cholesterol and blood sugar) and questionnaire answers (such as smoking status) |
 
 - Seven (7) of the tables are used in the Web Interface:
@@ -145,7 +147,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 - The source code is included in the [HCAZ_Source](HCAZ_Source) folder.
 
-- The source code includes JCL files to install the application. Some changes may need to be made to the JCL depending on your installation. If you have any questions ask your organization's zSystem Programmer or a zSystem Developer.
+- The source code includes JCL files to install the application. Some changes may need to be made to the JCL depending on your installation. If you have any questions ask your organization's z/OS System Programmer or a z/OS System Administrator.
 
 ## 7. Expose CICS Application data through z/OS Connect
 
