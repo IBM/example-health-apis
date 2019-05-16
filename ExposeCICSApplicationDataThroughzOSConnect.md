@@ -90,14 +90,7 @@
       
     You will need to send the request as json body
     
-    `Example body:`
-    <br/>`{`
-    <br/> `"programName" : {`
-    <br/> `   "serviceName": {`
-    <br/> `       "fieldName": "value"`
-    <br/> `       }`
-    <br/> `   }`
-    <br/> `}`
+ <br/>![Sample Payload](doc/source/images/payload.png) <br/> 
      
      If you get the correct data in your response, your service works.
 
