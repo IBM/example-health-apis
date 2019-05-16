@@ -2,7 +2,7 @@
 
 * ## IPIC Connection Configuration
 
-  - Define a TCPIPService to listen for inbound IPIC requests in your CICS region. This scenario uses a port value of 1091. For more information about defining a TCPIPService for inbound IPIC requests, see [Configuring the IPIC connection](https://www.ibm.com/support/knowledgecenter/SSGMCP_5.4.0/applications/developing/java/dfhpj2_jca_remote_eci_ipicconfig.html) in the _CICS Transaction Server_ documentation.
+  - Define a TCPIPService to listen for inbound IPIC requests in your CICS region. This scenario uses a port value of 1091. For more information about defining a TCPIPService for inbound IPIC requests, see [Configuring the IPIC connection](https://www.ibm.com/support/knowledgecenter/SSGMCP_5.4.0/applications/developing/java/dfhpj2_jca_remote_eci_ipicconfig.html) in the _CICS Transaction Server_ documentation. 
 
   - The following artifacts are needed:
 
@@ -20,6 +20,8 @@
       \<httpEndpoint id="defaultHttpEndpoint" host="\*" httpPort="9080" httpsPort="-1"/>
 
     - Enable security if required.
+    
+   - Additional instruction may also be found in the CICS RESTful APIs section of the [Getting Started Guide](https://www-03.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102724)
 
 - ## Creating a CICS Service
 
@@ -30,10 +32,14 @@
     - Select **z/OS Connect Enterprise Edition**.
 
   - Select **File > New > Project**. The New Project wizard opens.
+  
+    <br/>![Start Service Project](doc/source/images/newserviceproj.png) <br/> 
 
   - Select **z/OS Connect Enterprise Edition > z/OS Connect EE Service Project**, and click **Next**.
 
   - Specify a project name, select the project type, and optionally provide a description.
+  
+    <br/>![Service Project Popup](doc/source/images/newserviceproj2.png) <br/> 
 
     - Select **CICS COMMAREA Service** for the project type.
 
@@ -50,12 +56,16 @@
     - Select the service interface file to use for the **Request service interface** field.
 
     - Select the service interface file to use for the **Response service interface** field.
+    
+    <br/>![Service Project Editor](doc/source/images/servicemain.png) <br/> 
 
     - Optionally, specify initialization, conversion, and omission options for your data by clicking **Advanced Options**. <br/> For more information, see [Service-level data conversion customization](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/designing/service_advancedmapping.html?view=kc).
 
     - Click the **Configuration** tab to configure subsystem-specific service properties. For more information see [Configuring service properties](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/designing/service_specify_properties.html?view=kc).
 
     - Save your changes.
+    
+    <br/>![Service Configuration](doc/source/images/serviceconfiguration.PNG) <br/> 
 
     - After validation that all required information is specified, the JSON schema files and the service XML file are created in the service project folder. 
 
@@ -63,11 +73,13 @@
 
   - In the Project Explorer view, right-click the service project and select **z/OS Connect EE > Deploy Service to z/OS Connect EE Server**. 
 
+  <br/>![Service Deploy](doc/source/images/deployservice.png) <br/> 
+
 - ## Test the CICS HCAZ service
 
   - Start CICS® and ensure that the TCPIPService is open.
 
-  - Start your z/OS Connect EE server. For more information, see [Starting and stopping z/OS Connect EE](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/operating/start_stop_server.html?view=kc).
+  - Make sure your service is started. For more information, see [Starting and stopping z/OS Connect EE](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/operating/start_stop_server.html?view=kc).
 
     - Check the messages.log file for the following messages that confirm that the services are installed.
 
@@ -99,21 +111,35 @@
 
   - Select **z/OS Connect Enterprise Edition > z/OS Connect EE API Project**, and click **Next**.
   - Complete the sections for the new API project (provide a base path and name of the API) and click **Finish**.
+  
+  <br/>![API Project Popup](doc/source/images/newapiproject.png) <br/> 
+  
   - The z/OS Connect EE API Editor will open.
   - Click the red "X" next to any method (GET, POST, PUT, DELETE) you do not intend to use in the API call.
+  
+  <br/>![API Project View](doc/source/images/apimain.png) <br/> 
+  
   - The service archive file you created in the previous section must now be exported into your API project. 
     - Right click your service project folder from the previous step
     - Select z/OS Connect EE > Export z/OS Connect EE Service Archive.
     - In the Export Service Package dialog, select Workspace.
-    - Click Browse... to locate your API.
-    - Select your API and click OK. 
+    - Click "Browse"... to locate your API Project folder.
+    - Select your folder choice and click OK. 
+    - Click OK to finish the export
+    
+   <br/>![Add Service to Workspace](doc/source/images/exportservice.png) <br/>  
+    
    - Rename the default Path value to reflect your intended URI path/query by typing over the existing value.
-   -  Click Service... for the GET method to select the service archive file that defines the service on this API path that will be called by an HTTP GET request.
-  - The Select a z/OS Connect EE Service dialog opens.
-  - Click File System and navigate to the location of the .sar file. Select the file and click Open.
-  - The Import Services dialog opens. Click OK. The service now appears in the Service dialog.
-  - Click OK. This operation now maps to the service.
-  - From the menu bar, select File > Save.
+   -  Click Service... for the method to select the service archive file that defines the service on this API path that will be called by an HTTP request.
+      - The Select a z/OS Connect EE Service dialog opens.
+      - Click Workspace and navigate to the project holding the .sar file. Select the file and click OK.
+      - The Import Services dialog opens. Click OK. 
+      - You will be returned to the original dialog. The service now appears in the Service dialog.
+      - Click OK. This operation now maps to the service.
+      
+   <br/>![Add service to API](doc/source/images/importservice.png) <br/>  
+      
+      - From the menu bar, select File > Save.
   - Click Mapping... then click Open Both Mappings.
     - The request and response mapping editors open so that you can define the mapping between the content of the API's HTTP request and response, and the JSON content passed to and from the z/OS Connect Enterprise Edition service.
   - Click the "Request" tab to show the request mapping editor.  Connect the path/query parameter to the matching CICS parameter by dragging from the path/query parameter on the left to the JSON property on the right
@@ -131,6 +157,9 @@
     - In the Deploy API window, select the server to which to deploy the APIs.
     - If an API of the same name exists and you want to overwrite it, select the Update existing APIs check box.
     - Click OK.
+    
+    <br/>![Deploy API](doc/source/images/deploy.png) <br/> 
+    
     - Check the messages.log file for the following messages that confirm that the API is installed.
 
       - `BAQR7000I: z/OS Connect API package apiName installed successfully.`
