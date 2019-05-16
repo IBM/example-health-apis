@@ -1,5 +1,7 @@
 # 7. Expose CICS Application data through z/OS Connect
 
+   - Additional guidance for this section may also be found in the CICS RESTful APIs section of the z/OS Connect [Getting Started Guide](https://www-03.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102724)
+   
 * ## IPIC Connection Configuration
 
   - Define a TCPIPService to listen for inbound IPIC requests in your CICS region. This scenario uses a port value of 1091. For more information about defining a TCPIPService for inbound IPIC requests, see [Configuring the IPIC connection](https://www.ibm.com/support/knowledgecenter/SSGMCP_5.4.0/applications/developing/java/dfhpj2_jca_remote_eci_ipicconfig.html) in the _CICS Transaction Server_ documentation. 
@@ -21,8 +23,6 @@
 
     - Enable security if required.
     
-   - Additional instruction may also be found in the CICS RESTful APIs section of the [Getting Started Guide](https://www-03.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102724)
-
 - ## Creating a CICS Service
 
   - Switch to the z/OS Connect Enterprise Edition perspective in your Eclipse environment.
@@ -91,13 +91,13 @@
     You will need to send the request as json body
     
     `Example body:`
-    <br/>`{` <br/>
-    <br/> `"programName" : {`<br/>
-    <br/>    `"serviceName": {`<br/>
-    <br/>     ` "fieldName": "value"`<br/>
-    <br/>      `}`<br/>
-    <br/>    `}`<br/>
-    <br/> `}`<br/>
+    <br/>`{`
+    <br/> `"programName" : {`
+    <br/>    `"serviceName": {`
+    <br/>     ` "fieldName": "value"`
+    <br/>      `}`
+    <br/>    `}`
+    <br/> `}`
      
      If you get the correct data in your response, your service works.
 
