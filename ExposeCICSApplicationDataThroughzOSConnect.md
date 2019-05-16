@@ -43,7 +43,7 @@
 
     - Select **CICS COMMAREA Service** for the project type.
 
-  - Click **Finish** to create the project. <br/> The service project is created in the Project Explorer view. The service.properties file opens in the service project editor in a tab that is named after the service project. This service project editor is where you can configure the service and define the service interface. Initially, errors (![Error Red X](doc/source/images/ErrorRedX.png)) are reported and highlighted for information that is required and must be specified. Depending on the service type, required information varies. <br/> _The service project editor_ <br/>![The service project Editor](doc/source/images/ServiceProjectEditor.png) <br/> The **Actions** pane highlights the steps to create a service.
+  - Click **Finish** to create the project. <br/> The service project is created in the Project Explorer view. The service.properties file opens in the service project editor in a tab that is named after the service project. This service project editor is where you can configure the service and define the service interface. Initially, errors (![Error Red X](doc/source/images/ErrorRedX.png)) are reported and highlighted for information that is required and must be specified. Depending on the service type, required information varies. <br/> _The service project editor_  <br/>![Service Project Editor](doc/source/images/servicemain.png) <br/> The **Actions** pane highlights the steps to create a service.
 
   - In the service project editor, take the following steps:
 
@@ -53,13 +53,11 @@
 
     - Define the request and response service interfaces. The service interfaces are defined by importing COBOL copybooks,PL/I include files, or full programs and customizing the interfaces. For more information, see [Defining the request and response service interfaces](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/designing/service_compose_interface.html?view=kc).
 
-    - Select the service interface file to use for the **Request service interface** field.
+    - Create/Select the service interface file to use for the **Request service interface** field.
 
-    - Select the service interface file to use for the **Response service interface** field.
+    - Create/select the service interface file to use for the **Response service interface** field.
     
-    <br/>![Service Project Editor](doc/source/images/servicemain.png) <br/> 
-
-    - Optionally, specify initialization, conversion, and omission options for your data by clicking **Advanced Options**. <br/> For more information, see [Service-level data conversion customization](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/designing/service_advancedmapping.html?view=kc).
+     - Optionally, specify initialization, conversion, and omission options for your data by clicking **Advanced Options**. <br/> For more information, see [Service-level data conversion customization](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/designing/service_advancedmapping.html?view=kc).
 
     - Click the **Configuration** tab to configure subsystem-specific service properties. For more information see [Configuring service properties](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/designing/service_specify_properties.html?view=kc).
 
@@ -93,13 +91,13 @@
     You will need to send the request as json body
     
     `Example body:`
-    `{` 
-     `"programName" : {`
-        `"serviceName": {`
-         ` "fieldName": "value"`
-          `}
-        `}
-     `}`
+    <br/>`{` <br/>
+    <br/> `"programName" : {`<br/>
+    <br/>    `"serviceName": {`<br/>
+    <br/>     ` "fieldName": "value"`<br/>
+    <br/>      `}`<br/>
+    <br/>    `}`<br/>
+    <br/> `}`<br/>
      
      If you get the correct data in your response, your service works.
 
