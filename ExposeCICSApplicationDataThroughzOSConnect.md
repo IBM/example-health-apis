@@ -93,10 +93,10 @@
     `Example body:`
     <br/>`{`
     <br/> `"programName" : {`
-    <br/>    `"serviceName": {`
-    <br/>     ` "fieldName": "value"`
-    <br/>      `}`
-    <br/>    `}`
+    <br/> `   "serviceName": {`
+    <br/> `       "fieldName": "value"`
+    <br/> `       }`
+    <br/> `   }`
     <br/> `}`
      
      If you get the correct data in your response, your service works.
