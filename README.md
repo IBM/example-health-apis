@@ -119,7 +119,8 @@ This is how your APIs will be routed from your backend systems to a developer fr
 ## 4. Install z/OS Connect
 
 - Please refer to the **Installation and Initial Setup** section of this handy [Getting Started Guide](https://www-03.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102724) on how to install z/OS Connect. 
- -This guide is also available on this site as a [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf).  Go to page 8 for information on installation.
+
+-This guide is also available on this site as a [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf).  Go to page 8 for information on installation.
 
 ## 5. Expose DB2 data through z/OS Connect
 
