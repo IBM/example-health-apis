@@ -4,21 +4,13 @@
 
   - Define a TCPIPService to listen for inbound IPIC requests in your CICS region. This scenario uses a port value of 1091. For more information about defining a TCPIPService for inbound IPIC requests, see [Configuring the IPIC connection](https://www.ibm.com/support/knowledgecenter/SSGMCP_5.4.0/applications/developing/java/dfhpj2_jca_remote_eci_ipicconfig.html) in the _CICS Transaction Server_ documentation.
 
-  - Use the following command to create a server:
+  - The following artifacts are needed:
 
-    - `zosconnect create catalogManager --template=zosconnect:sampleCicsIpicCatalogManager`
-
-  - The following artifacts are created:
-
-    - A catalog API service archive file, catalog.aar, in the directory \<WLP_USER_DIR>/servers/catalogManager/resources/zosconnect/apis.
-
-    - Three services archive files, inquireCatalog.sar, inquireSingle.sar, and placeOrder.sar, in the directory \<WLP_USER_DIR>/servers/catalogManager/resources/zosconnect/services.
-
-    - A server.xml configuration file in the directory \<WLP_USER_DIR>/servers/catalogManager with the zosconnect:cicsService-1.0 feature included.
+    - A server.xml configuration file with the zosconnect:cicsService-1.0 feature included.
 
   - Customize the z/OS Connect EE server configuration file.
 
-    - Update the CICS connection element: \<zosconnect_cicsIpicConnection id="cicsConn" host="localhost" port="1091"/>
+    - Update the CICS connection element: \<zosconnect_cicsIpicConnection id="yourConnName" host="localhost" port="1234"/>
 
       - If your server and CICS region are on different LPARs, replace the host value localhost with the host name or IP address of the LPAR hosting your CICS region.
 
@@ -65,7 +57,7 @@
 
     - Save your changes.
 
-    - After validation that all required information is specified, the JSON schema files and the service XML file are created in the service project folder. To edit the service project at a later time, open the service project editor by double-clicking the service.properties file in the project folder within the Project Explorer view.
+    - After validation that all required information is specified, the JSON schema files and the service XML file are created in the service project folder. 
 
 - ## Deploy the CICS service using the API toolkit
 
