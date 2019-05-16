@@ -23,6 +23,8 @@ When the reader has completed this code pattern, they will understand how to:
 
 - The **z/OS Connect Build Toolkit** will be needed for the .sar file generation for Db2 services. This tool can be run either on the mainframe (omvs) or in a Windows command interface. These instructions do so on Windows. <br/> The build toolkit is packaged as a zip file and cab be obtained here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
 
+- The API Connect environment used in this code pattern is hosted on IBM Cloud.  An IBM Cloud account will be required.
+
 ## Flow
 
 This is how your APIs will be routed from your backend systems to a developer friendly portal.
@@ -35,48 +37,25 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 # Steps
 
-1. [Install z/OS Connect](#1-install-zos-connect)
-2. [Create a z/OS Connect Project](#2-create-a-zos-connect-project)
-3. [Create the DB2 database and tables](#3-create-the-db2-database-and-tables)
-4. [Populate DB2 database with Synthea data](#4-populate-db2-database-with-synthea-data)
+1. [Create CICS Application](#1-create-cics-application)
+2. [Create the DB2 database and tables](#2-create-the-db2-database-and-tables)
+3. [Populate DB2 database with Synthea data](#3-populate-db2-database-with-synthea-data)
+4. [Install z/OS Connect](#4-install-zos-connect)
 5. [Expose DB2 data through z/OS Connect](#5-expose-db2-data-through-zos-connect)
-6. [Create CICS Application](#6-create-cics-application)
-7. [Expose CICS Application data through z/OS Connect](#7-expose-cics-application-data-through-zos-connect)
-8. [Create API Connect Instance](#8-create-api-connect-instance)
-9. [Importing and Managing an API from z/OS Connect in API Connect](#9-importing-and-managing-an-api-from-zos-connect-in-api-connect)
+6. [Expose CICS Application data through z/OS Connect](#6-expose-cics-application-data-through-zos-connect)
+7. [Create API Connect Instance](#7-create-api-connect-instance)
+8. [Importing and Managing an API from z/OS Connect in API Connect](#8-importing-and-managing-an-api-from-zos-connect-in-api-connect)
 
-## 1. Install z/OS Connect
 
-- Please refer to the **Installation and Initial Setup** section of this [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf) on how to install z/OS Connect. Go to page 8 for information on installation.
+## 1. Create CICS Application
 
-## 2. Create a z/OS Connect Project
+- A sample CICS application is included in this code pattern. The application is known as HCAZ. It is a simple CICS application for inputting and retrieving healthcare information.
 
-- Open the Eclipse tool (IBM® Explorer for z/OS Aqua) in which you installed the z/OS Connect EE API Editor.
+- The source code is included in the [HCAZ_Source](HCAZ_Source) folder.
 
-- Switch to the z/OS Connect Enterprise Edition perspective.
+- The source code includes JCL files to install the application. Some changes may need to be made to the JCL depending on your installation. If you have any questions ask your organization's z/OS System Programmer or a z/OS System Administrator.
 
-  - From menu bar, select **Window > Open Perspective > Other**
-
-  - In the list of perspectives, select **z/OS Connect Enterprise Edition** and click **OK**.
-
-  You are now in the **z/OS Connect Enterprise Edition** perspective, with related views and resources readily available.
-
-- Create an API project.
-
-- From the menu bar, select **File > New > z/OS Connect EE API Project**. The z/OS Connect EE API Project wizard opens.
-
-  - Enter the project properties below, then click **Finish**.
-
-| **Project property** |                                                                           **Description**                                                                            |                 **Naming Convention**                  |
-| :------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------: |
-|     Project name     |                                        Unique alphanumeric name for your project. This is the name of the project in Eclipse.                                        | A name that relates to the info you are trying to see. |
-|       API name       |                                   The name of your API. This is the name by which the z/OS Connect EE server knows about this API.                                   |                    showpatientinfo.                    |
-|      Base path       | The unique basePath attribute that specifies the root of all the resources in this API. This path is used by REST clients in the URI they send in to invoke the API. |                    /showPatientInfo                    |
-|     Description      |                                           Optional field to provide a description of this API for documentation purposes.                                            |               "Retrieves patient info."                |
-
-- [Source](https://www.ibm.com/support/knowledgecenter/en/SS4SVW_2.0.0/com.ibm.zosconnect.doc/scenarios/ims_create_api.html)
-
-## 3. Create the DB2 database and tables
+## 2. Create the DB2 database and tables
 
 - Assumptions/Prerequisites
 
@@ -133,27 +112,24 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 - The commands for creating the database tables are listed in this [PDF](doc/source/CreateTableStatements.pdf)
 
-## 4. Populate DB2 database with Synthea data
+## 3. Populate DB2 database with Synthea data
 
 - Visit this [code pattern](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/) for the instructions on populating your DB2 database with data from the Synthea tool
+
+## 4. Install z/OS Connect
+
+- Please refer to the **Installation and Initial Setup** section of this [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf) on how to install z/OS Connect. Go to page 8 for information on installation.
 
 ## 5. Expose DB2 data through z/OS Connect
 
 - [Click this link to go to the steps for exposing DB2 data through z/OS Connect](ExposeDB2DataThroughzOSConnect.md)
 
-## 6. Create CICS Application
 
-- A sample CICS application is included in this code pattern. The application is known as HCAZ. It is a simple CICS application for inputting and retrieving healthcare information.
-
-- The source code is included in the [HCAZ_Source](HCAZ_Source) folder.
-
-- The source code includes JCL files to install the application. Some changes may need to be made to the JCL depending on your installation. If you have any questions ask your organization's z/OS System Programmer or a z/OS System Administrator.
-
-## 7. Expose CICS Application data through z/OS Connect
+## 6. Expose CICS Application data through z/OS Connect
 
 - [Click this link to go to the steps for exposing CICS data through z/OS Connect](ExposeCICSApplicationDataThroughzOSConnect.md)
 
-## 8. Create API Connect Instance
+## 7. Create API Connect Instance
 
 - Create an IBM Cloud Account
 
@@ -163,7 +139,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
   ![IBM Cloud Create Account](doc/source/images/IBMCloudCreateAccount.gif)
 
-- Create an API Connect Instance
+- Create an API Connect Instance on IBM Cloud
 
   - From the IBM Cloud Dashboard, click on **Catalog**.
 
@@ -175,6 +151,6 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
   ![Creating an API Connect Instance](doc/source/images/CreatAPIConnectInstance.gif)
 
-## 9. Importing and Managing an API from z/OS Connect in API Connect
+## 8. Importing and Managing an API from z/OS Connect in API Connect
 
 - [Click this link to go to the steps for Importing and Managing an API from z/OS Connect in API Connect](ImportingAndManagingAnAPIFromzOSConnectInAPIConnect.md)
