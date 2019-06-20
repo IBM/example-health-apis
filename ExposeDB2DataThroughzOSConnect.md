@@ -6,7 +6,7 @@
     ![DB2 Service Install Check](doc/source/images/DB2ServiceInstallCheck.png)<br/>
     _REST services for DB2 are defined either using a DB2 provided REST administrative service (DB2ServiceManager) or by using the DB2 BIND command using an update provided in DB2 PTF UI51748. There instructions walk through doing so using the RESTful administrative service._
 
-  - Open the REST Client tool of your choice (for example, we will be usign a Firefoc browser plug-in).
+  - Open the REST Client tool of your choice (for example, we will be usign a Firefox browser plug-in).
 
   - Choose the Header with a **Content-Type** of **application/json**
     ![REST Client Request Header](doc/source/images/RESTClientRequestHeader.png)
