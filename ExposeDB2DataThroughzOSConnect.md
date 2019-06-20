@@ -103,7 +103,7 @@
         - c. You can obtain portions of this value from your service URL that was called earlier during testing. Commonly, this would be /service/serviceName.
         - d. This value is your choice, but will also be used in the server.xml file.
 
-      - Chhose **File** -> **Save As** and save the file with a new name. _Note the folder where you saved the file for use in the zconbt script._
+      - Chose **File** -> **Save As** and save the file with a new name. _Note the folder where you saved the file for use in the zconbt script._
         - _Note: Place this file in the same folder as the json files or include the path to the .json files in the properties file._
 
     - **Run the zconbt tool to generate the .sar file.**
