@@ -5,7 +5,7 @@
 This part assumes that an API has been created using z/OS Connect. The requirements for managing the API using API Connect are:
 
 1. An IBM Cloud Account
-2. The API Connect Feature enabled on the IBM Could Account
+2. The API Connect Feature enabled on the IBM Cloud Account
 3. Access to the API description file (swagger.json) associated with the API or the URL and credentials to reach the API description document online.
 
 ## Background
@@ -132,7 +132,7 @@ Below is a pictorial view of z/OS Connect and API Connect working together. The 
 
 - Test the API
 
-  - Click the trianfle above the Invoke box
+  - Click the triangle above the Invoke box
 
   ![PlayButton](doc/source/images/PlayButton.png)
 
