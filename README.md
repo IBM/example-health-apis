@@ -71,7 +71,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 - DB2 Tables:
 
-  - A. There are 12 tables that are used in the entire Summit Healthcare Application (CICS native and Web):
+  - There are 12 tables that are used in the entire Summit Healthcare Application (CICS native and Web):
 
   |   **Table**   |                                                                      **Description**                                                                       |
   | :-----------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: |
