@@ -1,4 +1,4 @@
-# 9. Importing and Managing an API from z/OS Connect in API Connect
+# 8. Importing and Managing an API from z/OS Connect in API Connect
 
 ## Pre-requisites
 
