@@ -155,15 +155,15 @@
       ![Import a z/OS Connect Service]<br/>(doc/source/images/ImportzOSConnectService.png)<br/>
 
     - A window will pop up. Click the **File System** button.
-      <br/>![Click the File System Button](doc/source/images/FileSystemButton.png)<br/>
+      <br />![Click the File System Button](doc/source/images/FileSystemButton.png)<br />
 
     - Navigate to the location where you saved the .sar file. Choose it and click **Open**
 
     - In the Import Service window, click **OK**
-      <br/>![Import Service Window](doc/source/images/ImportServiceWindow.png)<br/>
+      <br />![Import Service Window](doc/source/images/ImportServiceWindow.png)<br />
 
     - In the Import z/OS Connect EE Services window, click OK. You will then be returned to the blank project.
-      <br/>![Import z/OS Connect EE Services Window](doc/source/images/ImportzOSConnectEEServicesWindow.png)<br/>
+      <br />![Import z/OS Connect EE Services Window](doc/source/images/ImportzOSConnectEEServicesWindow.png)<br/ >
 
   - ### Begin creating the API
 
