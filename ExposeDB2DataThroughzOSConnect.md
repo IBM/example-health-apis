@@ -144,18 +144,18 @@
 
       - **Project Name** with just be the name of the collection that appears in the Project Explorer area. It does not relate to the API function.
       - In **API name**, the value is typically the same as the Service name in the .properties file (Marked with an "a" in the "Creating a .sar file section)
-      - In **Base Path**, enter a value relevant to the API call you are making. This will be a permanent part of the API.
+      - In **Base Path**, enter a value relevant to the API call you are making. This will be a permanent part of the API. <br>
         ![z/OS Connect API Project Properties](doc/source/images/zOSConnectAPIProjectProperties.png)
 
-    - A tab should appear in the center section of the window. You have now created a Project.
+    - A tab should appear in the center section of the window. You have now created a Project. <br>
       ![Project Created Page](doc/source/images/ProjectCreatedPage.png)
 
   - ### Import .sar file into the API Toolkit.
 
     - In order to create an API, the tool must first have the artifacts for the service. Those artifacts have been bundled into a .sar file using the Build Toolkit and must now be imported into the workspace.
 
-    - Remaining in the z/OS Connect Perspective, right click on the API name listed in Project Explorer. Then choose **z/OS Connect EE -> Import z/OS Connect EE Services**
-      ![Import a z/OS Connect Service]<br/>(doc/source/images/ImportzOSConnectService.png)<br/>
+    - Remaining in the z/OS Connect Perspective, right click on the API name listed in Project Explorer. Then choose **z/OS Connect EE -> Import z/OS Connect EE Services**<br>
+      ![Import a z/OS Connect Service](doc/source/images/ImportzOSConnectService.png)<br/>
 
     - A window will pop up. Click the **File System** button.
       <br />![Click the File System Button](doc/source/images/FileSystemButton.png)<br />
@@ -166,7 +166,7 @@
       <br />![Import Service Window](doc/source/images/ImportServiceWindow.png)<br />
 
     - In the Import z/OS Connect EE Services window, click OK. You will then be returned to the blank project.
-      <br />![Import z/OS Connect EE Services Window](doc/source/images/ImportzOSConnectEEServicesWindow.png)<br/ >
+      <br />![Import z/OS Connect EE Services Window](doc/source/images/ImportzOSConnectEEServicesWindow.png)<br />
 
   - ### Begin creating the API
 
@@ -226,11 +226,11 @@
 
   - Add two stanzas like those in the code sample above, customizing for the specific service name and other details about the service and API:
 
-    - a) The invokeURI is often the same as the base path specified in the API creation (it may be the same as the service name).
-    - b) The connectionRefName should match a value that is created by the person who manages the server.xml file. It can be found in the stanza marked \<zosconnect*zosConnectServiceRestClientConnection>. <br/>
+    - a. The invokeURI is often the same as the base path specified in the API creation (it may be the same as the service name).
+    - b. The connectionRefName should match a value that is created by the person who manages the server.xml file. It can be found in the stanza marked \<zosconnect*zosConnectServiceRestClientConnection>. <br/>
       *(This was also entered in the properties file when creating the .sar)\_
-    - c) The URI should match the one used in the properties file in the "Creating a .sar file" section
-    - d) The default value of the httpMethod is POST. Leave this as is.
+    - c. The URI should match the one used in the properties file in the "Creating a .sar file" section
+    - d. The default value of the httpMethod is POST. Leave this as is.
 
   - Save the server.xml file.
 
