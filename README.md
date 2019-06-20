@@ -17,11 +17,13 @@ When the reader has completed this code pattern, they will understand how to:
 
 - In order to create a DB2 RESTful service, the system pre-requisite is to have DB2 v11 or v12 with associated PTFs for REST API support. (Info on APARs here:<br/> http://www-01.ibm.com/support/docview.wss?uid=isg1II14827 )
 
+- You must have a supported version of CICS Transaction Server.
+
 - The Service and API Creator will need the z/OS Connect API Toolkit for service (.sar) file generation of CICS services and API (.aar) file generation for CICS and DB2 APIs.
 
 - The API Creator will also need to have some sort of REST client tool. That can be in the form of a browser plug-in (such as Rest Client for Firefox or Advanced Rest Client for Chrome) or a desktop tool such as Postman or CuRL.
 
-- The **z/OS Connect Build Toolkit** will be needed for the .sar file generation for Db2 services. This tool can be run either on the mainframe (omvs) or in a Windows command interface. These instructions do so on Windows. <br/> The build toolkit is packaged as a zip file and cab be obtained here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
+- The service creator will need the **z/OS Connect Build Toolkit** for the .sar file generation for Db2 services. This tool can be run either on the mainframe (omvs) or in a Windows command interface. These instructions do so on Windows. <br/> The build toolkit is packaged as a zip file and can be obtained from your z/OS Connect product installation directory or here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
 
 - The API Connect environment used in this code pattern is hosted on IBM Cloud.  An IBM Cloud account will be required.
 
