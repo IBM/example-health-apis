@@ -152,18 +152,18 @@
     - In order to create an API, the tool must first have the artifacts for the service. Those artifacts have been bundled into a .sar file using the Build Toolkit and must now be imported into the workspace.
 
     - Remaining in the z/OS Connect Perspective, right click on the API name listed in Project Explorer. Then choose **z/OS Connect EE -> Import z/OS Connect EE Services**
-      ![Import a z/OS Connect Service](doc/source/images/ImportzOSConnectService.png)
+      ![Import a z/OS Connect Service]<br/>(doc/source/images/ImportzOSConnectService.png)<br/>
 
     - A window will pop up. Click the **File System** button.
-      ![Click the File System Button](doc/source/images/FileSystemButton.png)
+      <br/>![Click the File System Button](doc/source/images/FileSystemButton.png)<br/>
 
     - Navigate to the location where you saved the .sar file. Choose it and click **Open**
 
     - In the Import Service window, click **OK**
-      ![Import Service Window](doc/source/images/ImportServiceWindow.png)
+      <br/>![Import Service Window](doc/source/images/ImportServiceWindow.png)<br/>
 
     - In the Import z/OS Connect EE Services window, click OK. You will then be returned to the blank project.
-      ![Import z/OS Connect EE Services Window](doc/source/images/ImportzOSConnectEEServicesWindow.png)
+      <br/>![Import z/OS Connect EE Services Window](doc/source/images/ImportzOSConnectEEServicesWindow.png)<br/>
 
   - ### Begin creating the API
 
