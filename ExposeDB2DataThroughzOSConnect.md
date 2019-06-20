@@ -98,10 +98,10 @@
 
       - Edit the sample file to match the specifications for your new service. Guidance is included in the sample file. Some additional notes:
 
-        - The service name shoould be the same as the name of the service from the "Creating a DB2 Service" part.
-        - For consistency, the json request and response files should be named \<serviceName>\_request.json and \<serviceName>\_response.json
-        - You can obtain portions of this value from your service URL that was called earlier during testing. Commonly, this would be /service/serviceName.
-        - This value is your choice, but will also be used in the server.xml file.
+        - a. The service name shoould be the same as the name of the service from the "Creating a DB2 Service" part.
+        - b. For consistency, the json request and response files should be named \<serviceName>\_request.json and \<serviceName>\_response.json
+        - c. You can obtain portions of this value from your service URL that was called earlier during testing. Commonly, this would be /service/serviceName.
+        - d. This value is your choice, but will also be used in the server.xml file.
 
       - Chhose **File** -> **Save As** and save the file with a new name. _Note the folder where you saved the file for use in the zconbt script._
         - _Note: Place this file in the same folder as the json files or include the path to the .json files in the properties file._
