@@ -129,12 +129,15 @@
   - ### Create a new API Project in the API Toolkit.
 
     - Start Eclipse and choose the z/OS Connect Perspective
+      <br>
       ![z/OS Connect Perspective Button](doc/source/images/zOSConnectPerspectiveButton.png)
 
     - Choose **File -> New -> Project**
+      <br>
       ![z/OS Connect New Project](doc/source/images/zOSConnectProjectButton.png)
 
     - At the popup window, choose **z/OS Connect API Project**
+      <br>
       ![Popup z/OS Connect API Project](doc/source/images/PopupChoosezOSConnectAPIProject.png)
 
     - Enter your choice of values for the fields (with some guidance below)
