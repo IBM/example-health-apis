@@ -6,7 +6,7 @@ This code pattern shows you how to expose data from a DB2 database and a CICS ap
 
 This work was done as part of the Summit Health set of code patterns, which demonstrate how cloud technology can access data stored on z/OS Systems. We needed a way to access the large amounts of data stored on a DB2 database and a CICS application. We used z/OS Connect and API Connect to expose the data through REST APIs. z/OS Connect provides a single, common way to unleash your existing market-differentiating assets on IBM with RESTful APIs. API Connect allows automated API creation, simple discovery of assets, self-service access for developers, and built-in security and governance. z/OS Connect was used first to expose the data from DB2 and CICS as REST APIs. Then API Connect was used to create a way for developers to easily access the APIs through an intuitive portal.
 
-This code pattern is for people with an intermediate understanding and experience working with Z Systems, z/OS and Eclipse tools like IBM Explorer for z/OS.
+**This code pattern is for people with an intermediate understanding and experience working with Z Systems, z/OS and Eclipse tools like IBM Explorer for z/OS.**
 
 When the reader has completed this code pattern, they will understand how to:
 
