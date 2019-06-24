@@ -16,6 +16,7 @@
   - Modify the following stanza with the values for your service and paste it into the Body section (be sure to keep the requestType as "createService"):
     ![Modified Stanza](doc/source/images/ModifiedStanza.png)
 
+
   - Click **SEND**
     ![Click SEND](doc/source/images/ClickSEND.png)
 
