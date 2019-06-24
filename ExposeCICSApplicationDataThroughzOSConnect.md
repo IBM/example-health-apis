@@ -1,4 +1,4 @@
-# 6. Expose CICS Subsystem through z/OS Connect
+# 6. Expose CICS Subsystem Program through z/OS Connect
 
 - Additional guidance for this section may also be found in the CICS RESTful APIs section of the z/OS Connect [Getting Started Guide](https://www-03.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102724)
 
@@ -53,7 +53,7 @@
 
     - Specify the program for CICS.
 
-    - Define the request and response service interfaces. The service interfaces are defined by importing COBOL copybooks,PL/I include files, or full programs and customizing the interfaces. For more information, see [Defining the request and response service interfaces](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/designing/service_compose_interface.html?view=kc).
+    - Define the request and response service interfaces. The service interfaces are defined by importing COBOL copybooks, PL/I include files, or full programs and customizing the interfaces. For more information, see [Defining the request and response service interfaces](https://www.ibm.com/support/knowledgecenter/SS4SVW_3.0.0/designing/service_compose_interface.html?view=kc).
 
     - Create/Select the service interface file to use for the **Request service interface** field.
 
@@ -75,7 +75,7 @@
 
   <br/>![Service Deploy](doc/source/images/deployservice.png) <br/>
 
-- ## Test the CICS HCAZ service
+- ## Test the CICS service
 
   - Start CICS® and ensure that the TCPIPService is open.
 
@@ -162,7 +162,7 @@
 
       - `BAQR7000I: z/OS Connect API package apiName installed successfully.`
 
-- ## Test the CICS HCAZ API
+- ## Test the CICS API
 
   - To test the API using the z/OS Connect API Toolkit, follow the instructions noted in the Knowledge Center. See [Testing an API](https://www.ibm.com/support/knowledgecenter/en/SS4SVW_3.0.0/designing/api_edit_view_start_stop.html).
 
