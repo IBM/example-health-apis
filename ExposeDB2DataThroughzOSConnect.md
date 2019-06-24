@@ -20,6 +20,7 @@
   - Click **SEND**
     ![Click SEND](doc/source/images/ClickSEND.png)
 
+
   - If the command works, you will get an HTTP 201 response (which means that the call was successful and something was created).
 
   - In the Response, the new url for the service you created will be listed.
