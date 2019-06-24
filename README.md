@@ -131,7 +131,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 ## 6. Expose CICS Application through z/OS Connect
 
-- [Click this link to go to the steps for exposing CICS data through z/OS Connect](ExposeCICSApplicationDataThroughzOSConnect.md)
+- [Click this link to go to the steps for exposing CICS Application through z/OS Connect](ExposeCICSApplicationDataThroughzOSConnect.md)
 
 ## 7. Create API Connect Instance
 
