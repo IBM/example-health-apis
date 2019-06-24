@@ -68,7 +68,7 @@
     - Place the url for invoking the service in the URL field and click **SEND**. (Make sure the Body area of the form is blank.)
       ![CreatingTheFilesForBuildToolKit1](doc/source/images/CreatingTheFilesForBuildToolkit1.png)
 
-    - **Creatign the json files**
+    - **Creating the json files**
 
       - The json information for the request and response is in the response body for the invoked call. Select the entire area behind the words **"Request Schema"**: (including brackets) and **Copy** it.
         ![JSON Info in Response Body](doc/source/images/JSONInfoInResponseBody.png)
@@ -213,11 +213,10 @@
 
 * ## Registering the Service and the API in the z/OS Connect Server
 
-  - In order to run your DB2-based API on z/OS Connect, some entries must be made in the **server.xml** file. These entries describe the destination location of DB2 and the credentials used to reach it.
+  - In order to run your DB2-based API on z/OS Connect, some entries must be made in the **server.xml** file. These entries describe the destination address of DB2 and the credentials used to reach it.
 
-  - Open the server.xml file
+  - Follow the instructions in this Knowledge Center article to edit the server.xml file:  https://www.ibm.com/support/knowledgecenter/en/SS4SVW_beta/configuring/config_rest_conn.html
 
-  - Save the server.xml file.
 
   - **You are now ready to test your API.**
 
