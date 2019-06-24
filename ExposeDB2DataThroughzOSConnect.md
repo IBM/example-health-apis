@@ -220,7 +220,7 @@
 
   - **You are now ready to test your API.**
 
-  - ### Testing the API using the z/OS Connect API Toolkit
+  - ## Testing the API using the z/OS Connect API Toolkit
 
     - Now that you have created your REST service, created your API and deployed your API, you are ready to test the API. <br/> This can be done either using the API Toolkit’s SwaggerUI tooling or using the same REST Client that you used when creating your REST Service. These instructions walk through using the SwaggerUI tooling.
 
