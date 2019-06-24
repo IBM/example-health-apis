@@ -14,6 +14,8 @@
 
     - Update the CICS connection element: \<zosconnect_cicsIpicConnection id="yourConnName" host="localhost" port="1234"/>
 
+      - Replace the value yourConnName with the name of your choice.  Often this matches the name of the target CICS region.
+      
       - If your server and CICS region are on different LPARs, replace the host value localhost with the host name or IP address of the LPAR hosting your CICS region.
 
       - Replace the port value 1234 with the port that your CICS TCPIPService is configured to listen for inbound IPIC requests. This scenario uses port 1091.
@@ -84,7 +86,7 @@
       - `BAQR7043I: z/OS Connect EE service archive yourServiceName installed successfully.`
 
   - Use the REST client tool of your choice to test the url associated with your service
-    Use the HTTP POST to invoke the service
+    Use the HTTP POST to invoke the service.  
 
     `https://<yourhostname>:<port>/zosConnect/services/<yourServiceName>?action=invoke`
 
