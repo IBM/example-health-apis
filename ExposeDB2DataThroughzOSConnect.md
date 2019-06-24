@@ -2,7 +2,7 @@
 
 - ## Creating a DB2 Service
 
-  - To verify that REST Services have been installed on your system, you can enter this into the address for your browser: [http://my.db2.ip.addr:port/services/](http://my.db2.ip.addr:port/services/). There will be a result on the screen showing something like the box below:<br/>
+  - To verify that REST Services have been installed on your system, you can enter this into the address for your browser: http://my.db2.ip.addr:port/services/ (Replace my.db2.addr with the hostname or ip address of your target DB2 system.  Replace port with the port number required to reach your desired DB2 system.) There will be a result on the screen showing something like the box below:<br/>
     ![DB2 Service Install Check](doc/source/images/DB2ServiceInstallCheck.png)<br/>
     _REST services for DB2 are defined either using a DB2 provided REST administrative service (DB2ServiceManager) or by using the DB2 BIND command using an update provided in DB2 PTF UI51748. There instructions walk through doing so using the RESTful administrative service._
 
@@ -30,7 +30,7 @@
 
   - ### Testing a DB2 Service
 
-    If you want to see if this service call works, you can do so with the REST client.
+    To see if this service call works, you can do so with the REST client.
 
     - Make sure to use the POST method and the Header with Content-Type of application/json
     - Copy the url for the service and paste it into the URL field (you can get this from the listing of services using the note above)
@@ -38,14 +38,14 @@
     - Click SEND
       ![Testing A DB2 Service](doc/source/images/TestingADB2Service.png)
 
-  - ### Deleteing a DB2 Service
+  - ### Deleting a DB2 Service
 
     If you made a mistake when you created your service or need to delete it for any reason, modify the stanza below and follow the first 5 parts of the Creating a DB2 Service step.
     ![Deleting a DB2 Service](doc/source/images/DeletingADB2Service.png)
 
 - ## Creating a .sar file
 
-  - In order to turn your new service into an API using z/OS Connect, the service needs to have a Service Archive (.sar) file. The .sar file has the json request and response sechemas for the service as well as information about invoking it. <br/><br/> To create the .sar file for a DB2 service, the **z/OS Connect Build Toolkit** utility (**zconbt**) must be used. The utility can be installed on z/OS or on a Windows workstation. These instructions walk through using it on Windows.
+  - In order to turn your new service into an API using z/OS Connect, the service needs to have a Service Archive (.sar) file. The .sar file has the json request and response sechemas for the service as well as information about invoking it. <br/><br/> To create the .sar file for a DB2 service, the **z/OS Connect Build Toolkit** utility (**zconbt**) must be used. The utility can be installed on z/OS or on a Linux or Windows workstation. These instructions walk through using it on Windows.
 
   - ### Installing the Build Toolkit
 
@@ -213,24 +213,9 @@
 
 * ## Registering the Service and the API in the z/OS Connect Server
 
-  - In order to run your DB2-based API on z/OS Connect, some entries must be made in the **server.xml** file. These entries describe the service and API names and URIs.
-
-    - _Note: This step will likely be done by the person who created the z/OS Connect Server, and not the person creating the API. It may be beneficial to simply provide the system administrator with the correct values to enter._
-      _For the system administrator: if multiple DB2 APIs will be created, it is recommended to create an xml file dedicated to these resource definitions. Then use an "\<include>" statement in the server.xml to refer to this file._
-      _For more information on \<include>: visit this [link](https://www.ibm.com/support/knowledgecenter/en/SS4SVW_2.0.0/com.ibm.zosconnect.doc/highavailability/split_config_info.html)._
-
-  - Some sample code to add to the server.xml file is below:
-    ![Server.xml Sample Code](doc/source/images/ServerXMLSampleCode.png)
+  - In order to run your DB2-based API on z/OS Connect, some entries must be made in the **server.xml** file. These entries describe the destination location of DB2 and the credentials used to reach it.
 
   - Open the server.xml file
-
-  - Add two stanzas like those in the code sample above, customizing for the specific service name and other details about the service and API:
-
-    - a. The invokeURI is often the same as the base path specified in the API creation (it may be the same as the service name).
-    - b. The connectionRefName should match a value that is created by the person who manages the server.xml file. It can be found in the stanza marked \<zosconnect*zosConnectServiceRestClientConnection>. <br/>
-      *(This was also entered in the properties file when creating the .sar)\_
-    - c. The URI should match the one used in the properties file in the "Creating a .sar file" section
-    - d. The default value of the httpMethod is POST. Leave this as is.
 
   - Save the server.xml file.
 
