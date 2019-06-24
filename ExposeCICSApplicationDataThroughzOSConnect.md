@@ -1,4 +1,4 @@
-# 6. Expose CICS Application data through z/OS Connect
+# 6. Expose CICS Subsystem through z/OS Connect
 
 - Additional guidance for this section may also be found in the CICS RESTful APIs section of the z/OS Connect [Getting Started Guide](https://www-03.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102724)
 
