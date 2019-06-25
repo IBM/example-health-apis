@@ -13,6 +13,8 @@ When the reader has completed this code pattern, they will understand how to:
 - Use z/OS Connect to expose CICS and DB2 Data with REST APIs
 - Use API Connect to manage your APIs and create a portal for developers to access them
 
+If you have any questions please email **Kenishia Callaway** at: **kenishia@us.ibm.com**
+
 ### Pre-requisites
 
 - In order to create a DB2 RESTful service, the system pre-requisite is to have DB2 v11 or v12 with associated PTFs for REST API support. (Info on APARs here:<br/> http://www-01.ibm.com/support/docview.wss?uid=isg1II14827 )
@@ -25,7 +27,7 @@ When the reader has completed this code pattern, they will understand how to:
 
 - The service creator will need the **z/OS Connect Build Toolkit** for the .sar file generation for Db2 services. This tool can be run either on the mainframe (omvs) or in a Windows command interface. These instructions do so on Windows. <br/> The build toolkit is packaged as a zip file and can be obtained from your z/OS Connect product installation directory or here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
 
-- The API Connect environment used in this code pattern is hosted on IBM Cloud.  An IBM Cloud account will be required.
+- The API Connect environment used in this code pattern is hosted on IBM Cloud. An IBM Cloud account will be required.
 
 ## Flow
 
@@ -47,7 +49,6 @@ This is how your APIs will be routed from your backend systems to a developer fr
 6. [Expose CICS Application through z/OS Connect](#6-expose-cics-application-data-through-zos-connect)
 7. [Create API Connect Instance](#7-create-api-connect-instance)
 8. [Importing and Managing an API from z/OS Connect in API Connect](#8-importing-and-managing-an-api-from-zos-connect-in-api-connect)
-
 
 ## 1. Create CICS Application
 
@@ -87,7 +88,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
   | BLOODPRESSURE |                                              Log of patient blood pressure when measured at a doctor's visit                                               |
   |    SESSION    |                                                  Log of brain activity measurements taken during analysis                                                  |
   | APPOINTMENTS  |                                  Record of appointments for each patient (including doctor's name, specialty and reason)                                   |
-  |   ALLERGIES   |                                                   List of any allergies a patient has and when they were diagnosed                                                   |
+  |   ALLERGIES   |                                              List of any allergies a patient has and when they were diagnosed                                              |
   | OBSERVATIONS  | Log of patient measurements (such as height and weight), lab results (like cholesterol and blood sugar) and questionnaire answers (such as smoking status) |
 
 - Seven (7) of the tables are used in the Web Interface:
@@ -120,14 +121,13 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 ## 4. Install z/OS Connect
 
-- Please refer to the **Installation and Initial Setup** section of this handy [Getting Started Guide](https://www-03.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102724) on how to install z/OS Connect. 
+- Please refer to the **Installation and Initial Setup** section of this handy [Getting Started Guide](https://www-03.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102724) on how to install z/OS Connect.
 
-  -This guide is also available on this site as a [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf).  Go to page 8 for information on installation.
+  -This guide is also available on this site as a [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf). Go to page 8 for information on installation.
 
 ## 5. Expose DB2 data through z/OS Connect
 
 - [Click this link to go to the steps for exposing DB2 data through z/OS Connect](ExposeDB2DataThroughzOSConnect.md)
-
 
 ## 6. Expose CICS Application through z/OS Connect
 
