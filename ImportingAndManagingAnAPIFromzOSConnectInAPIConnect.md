@@ -96,7 +96,7 @@ Below is a pictorial view of z/OS Connect and API Connect working together. The 
 
   <img src="doc/source/images/CreateAssembleButton.png" alt="Create Assembly Buttonn" width="40%">
 
-* There will be a scroll bar near the middle of the screen. Scroll down to the Policies section and click and hold "Invoke".
+* There will be a scroll bar near the middle of the screen. Scroll down to the Policies section and click and hold "Invoke". <br>
   <img src="doc/source/images/InvokeButton.png" alt="Invoke Button" width="60%">
 
 - Drag the invoke action to a place between the circles. A dotted box will appear where you can drop it.
