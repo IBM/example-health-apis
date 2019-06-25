@@ -2,7 +2,7 @@
 
 - ## Creating a DB2 Service
 
-  - To verify that REST Services have been installed on your system, you can enter this into the address for your browser: http://my.db2.ip.addr:port/services/ (Replace my.db2.addr with the hostname or ip address of your target DB2 system.  Replace port with the port number required to reach your desired DB2 system.) There will be a result on the screen showing something like the box below:<br/>
+  - To verify that REST Services have been installed on your system, you can enter this into the address for your browser: http://my.db2.ip.addr:port/services/ (Replace my.db2.addr with the hostname or ip address of your target DB2 system. Replace port with the port number required to reach your desired DB2 system.) There will be a result on the screen showing something like the box below:<br/>
     ![DB2 Service Install Check](doc/source/images/DB2ServiceInstallCheck.png)<br/>
     _REST services for DB2 are defined either using a DB2 provided REST administrative service (DB2ServiceManager) or by using the DB2 BIND command using an update provided in DB2 PTF UI51748. There instructions walk through doing so using the RESTful administrative service._
 
@@ -16,35 +16,34 @@
   - Modify the following stanza with the values for your service and paste it into the Body section (be sure to keep the requestType as "createService"):
     ![Modified Stanza](doc/source/images/ModifiedStanza.png)
 
+* Click **SEND**
+  ![Click SEND](doc/source/images/ClickSEND.png)
 
-  - Click **SEND**
-    ![Click SEND](doc/source/images/ClickSEND.png)
+* If the command works, you will get an HTTP 201 response (which means that the call was successful and something was created).
 
-  - If the command works, you will get an HTTP 201 response (which means that the call was successful and something was created).
+* In the Response, the new url for the service you created will be listed.
+  ![RequestResponseForNewService](doc/source/images/RequestResponseForNewService.png)
 
-  - In the Response, the new url for the service you created will be listed.
-    ![RequestResponseForNewService](doc/source/images/RequestResponseForNewService.png)
+* You have just created a service.
 
-  - You have just created a service.
+  _Note: If you want to verify that the service exists later, you can use that same url that was listed in the verification step (http://my.db2.ip.addr:port/services/) to show you the services that exist on your DB2 system._
 
-    _Note: If you want to verify that the service exists later, you can use that same url that was listed in the verification step (http://my.db2.ip.addr:port/services/) to show you the services that exist on your DB2 system._
+* ### Testing a DB2 Service
 
-  - ### Testing a DB2 Service
+  To see if this service call works, you can do so with the REST client.
 
-    To see if this service call works, you can do so with the REST client.
+  - Make sure to use the POST method and the Header with Content-Type of application/json
+  - Copy the url for the service and paste it into the URL field (you can get this from the listing of services using the note above)
+  - Include any parameters you need to pass for the service in the "Body" section.
+  - Click SEND
+    ![Testing A DB2 Service](doc/source/images/TestingADB2Service.png)
 
-    - Make sure to use the POST method and the Header with Content-Type of application/json
-    - Copy the url for the service and paste it into the URL field (you can get this from the listing of services using the note above)
-    - Include any parameters you need to pass for the service in the "Body" section.
-    - Click SEND
-      ![Testing A DB2 Service](doc/source/images/TestingADB2Service.png)
+* ### Deleting a DB2 Service
 
-  - ### Deleting a DB2 Service
+  If you made a mistake when you created your service or need to delete it for any reason, modify the stanza below and follow the first 5 parts of the Creating a DB2 Service step.
+  ![Deleting a DB2 Service](doc/source/images/DeletingADB2Service.png)
 
-    If you made a mistake when you created your service or need to delete it for any reason, modify the stanza below and follow the first 5 parts of the Creating a DB2 Service step.
-    ![Deleting a DB2 Service](doc/source/images/DeletingADB2Service.png)
-
-- ## Creating a .sar file
+* ## Creating a .sar file
 
   - In order to turn your new service into an API using z/OS Connect, the service needs to have a Service Archive (.sar) file. The .sar file has the json request and response sechemas for the service as well as information about invoking it. <br/><br/> To create the .sar file for a DB2 service, the **z/OS Connect Build Toolkit** utility (**zconbt**) must be used. The utility can be installed on z/OS or on a Linux or Windows workstation. These instructions walk through using it on Windows.
 
@@ -120,7 +119,7 @@
 
     - If you get a response like "Successfully created service", then your .sar file is created. You are now ready to move to API creation.
 
-- ## Creating the API
+* ## Creating the API
 
   - So far, you have created your DB2 REST Service and the Service Archive File that describes the service. As a reminder, a REST Service can only do the POST method. To provide additional functionality, we will be creating a REST API.
 
@@ -212,39 +211,38 @@
       ![DeploymentConfirmationPopup](doc/source/images/DeploymentConfirmationWindow.png)
       - _The .aar file for the API has automatically been generated and placed in the right location in the z/OS Connect file system for use._
 
-* ## Registering the Service and the API in the z/OS Connect Server
+- ## Registering the Service and the API in the z/OS Connect Server
 
   - In order to run your DB2-based API on z/OS Connect, some entries must be made in the **server.xml** file. These entries describe the destination address of DB2 and the credentials used to reach it.
 
-  - Follow the instructions in this Knowledge Center article to edit the server.xml file:  https://www.ibm.com/support/knowledgecenter/en/SS4SVW_beta/configuring/config_rest_conn.html
+  - Follow the instructions in this Knowledge Center article to edit the server.xml file: https://www.ibm.com/support/knowledgecenter/en/SS4SVW_beta/configuring/config_rest_conn.html
 
+* **You are now ready to test your API.**
 
-  - **You are now ready to test your API.**
+* ## Testing the API using the z/OS Connect API Toolkit
 
-  - ## Testing the API using the z/OS Connect API Toolkit
+  - Now that you have created your REST service, created your API and deployed your API, you are ready to test the API. <br/> This can be done either using the API Toolkit’s SwaggerUI tooling or using the same REST Client that you used when creating your REST Service. These instructions walk through using the SwaggerUI tooling.
 
-    - Now that you have created your REST service, created your API and deployed your API, you are ready to test the API. <br/> This can be done either using the API Toolkit’s SwaggerUI tooling or using the same REST Client that you used when creating your REST Service. These instructions walk through using the SwaggerUI tooling.
+  - Click on the **z/OS Connect Servers** tab (typically in the bottom left corner) and ensure that the icon next to your server is green (![z/OS Connect Server Tab Icon](doc/source/images/ZOSConnectServerTabIcon.png)) indicating that you are connected to the server.
 
-    - Click on the **z/OS Connect Servers** tab (typically in the bottom left corner) and ensure that the icon next to your server is green (![z/OS Connect Server Tab Icon](doc/source/images/ZOSConnectServerTabIcon.png)) indicating that you are connected to the server.
+    - **To see the API:** <br/> _Click the triangle next to the APIs folder to see all the folders that are deployed on the server._ <br/> (To get the uri associated with the API, left-click on the API name and a tab will appear to the right. You can use this uri with the tool of your choice.)
+      ![To See the APIs](doc/source/images/ToSeeTheAPIs.png)
 
-      - **To see the API:** <br/> _Click the triangle next to the APIs folder to see all the folders that are deployed on the server._ <br/> (To get the uri associated with the API, left-click on the API name and a tab will appear to the right. You can use this uri with the tool of your choice.)
-        ![To See the APIs](doc/source/images/ToSeeTheAPIs.png)
+  - **Testing the API:**
 
-    - **Testing the API:**
+    - Right click on the API name and a popup menu will appear. Choose **Open In SwaggerUI**.
+      ![OpenInSwaggerUI](doc/source/images/OpenInSwaggerUI.png)
 
-      - Right click on the API name and a popup menu will appear. Choose **Open In SwaggerUI**.
-        ![OpenInSwaggerUI](doc/source/images/OpenInSwaggerUI.png)
+    - A new tab will appear on the right
+      ![Swagger UI Tab](doc/source/images/SwaggerUITab.png)
 
-      - A new tab will appear on the right
-        ![Swagger UI Tab](doc/source/images/SwaggerUITab.png)
+    - Click **Expand Operations** <br/> Scroll down, and you will see the area where you can input sample values
+      ![InputSampleValues](doc/source/images/InputSampleValues.png)
 
-      - Click **Expand Operations** <br/> Scroll down, and you will see the area where you can input sample values
-        ![InputSampleValues](doc/source/images/InputSampleValues.png)
+    - Enter a test value, scroll down the page and click the TRY IT OUT button
+      ![Try It Out Button](doc/source/images/TryItOutButton.png)
 
-      - Enter a test value, scroll down the page and click the TRY IT OUT button
-        ![Try It Out Button](doc/source/images/TryItOutButton.png)
-
-      - Scroll down and Response content can be found.
-        ![ResponseContentExample](doc/source/images/ResponseContentExample.png)
+    - Scroll down and Response content can be found.
+      ![ResponseContentExample](doc/source/images/ResponseContentExample.png)
 
 **If the test is successful, you are done!**

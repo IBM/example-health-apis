@@ -26,7 +26,7 @@ Below is a pictorial view of z/OS Connect and API Connect working together. The 
 
   - Choose your API Connect Service
 
-  ![Dashboard API Connect](doc/source/images/DashboardAPIConnect.png)
+  <img src="doc/source/images/DashboardAPIConnect.png" alt="Dashboard API Connect" width="40%">
 
 - Create an API Connect Product
 
@@ -34,23 +34,23 @@ Below is a pictorial view of z/OS Connect and API Connect working together. The 
 
   - Click the ">>" icon next to the word Dashboard (near the top right)
 
-  ![>> Icon](doc/source/images/>>Icon.png)
+    <img src="doc/source/images/>>Icon.png" alt=">> Icon" width="40%">
 
   - Choose "Drafts"
 
-  ![Draft Menu](doc/source/images/DraftMenu.png)
+  <img src="doc/source/images/DraftMenu.png" alt="Draft Menu" width="40%">
 
   - Click "Products"
 
-  ![Products Button](doc/source/images/ProductsButton.png)
+  <img src="doc/source/images/ProductsButton.png" alt="Products Button" width="40%">
 
   - Add a new product by clicking the "Add" button
 
-  ![Add Button](doc/source/images/AddButton.png)
+  <img src="doc/source/images/AddButton.png" alt="Add Button" width="40%">
 
   - A "New Product" menu screen should appear. Enter a title and click "Create Product"
 
-  ![New Product Menu](doc/source/images/NewProductMenu.png)
+   <img src="doc/source/images/NewProductMenu.png" alt="New Product Menu" width="80%">
 
 - Import the z/OS Connect API
 
@@ -58,17 +58,17 @@ Below is a pictorial view of z/OS Connect and API Connect working together. The 
 
   - Click "APIs"
 
-  ![APIs Button](doc/source/images/APIsButton.png)
+  <img src="doc/source/images/APIsButton.png" alt="APIs Button" width="40%">
 
   - Add the API by choosing "Add" and "Import API from a file or URL"
 
-  ![API Add Button](doc/source/images/APIAddButton.png)
+  <img src="doc/source/images/APIAddButton.png" alt="API Add Button" width="40%">
 
   - Enter the URI for the API document API you want to manage. </br> Ex: https://<span></span>host:port/basepath/api-docs
 
     - Include credentials that have permission to view this document
 
-    ![Import Menu](doc/source/images/ImportMenu.png)
+    <img src="doc/source/images/ImportMenu.png" alt="Import Menu" width="60%">
 
   - Click "Import"
 
@@ -78,7 +78,7 @@ Below is a pictorial view of z/OS Connect and API Connect working together. The 
 
   - _You should see a screen similar to the one below. The default Title of the API is equivalent to the base path of the imported API._
 
-  ![Refine API](doc/source/images/RefineAPI.png)
+  <img src="doc/source/images/RefineAPI.png" alt="Refine API" width="70%">
 
   - Provide the Title and Name of your choice or keep the defaults
 
@@ -86,49 +86,49 @@ Below is a pictorial view of z/OS Connect and API Connect working together. The 
 
   - Scroll down to the "Schemes" section and un-check "http"
 
-  ![HostCheck](doc/source/images/HostCheck.png)
+  <img src="doc/source/images/HostCheck.png" alt="HostCheck" width="70%">
 
   - Near the top of the screen, click the word "Assemble"
 
-  ![Assemble Button](doc/source/images/AssembleButton.png)
+  <img src="doc/source/images/AssembleButton.png" alt="Assemble Button" width="70%">
 
   - Click "Create Assembly"
 
-  ![Create Assembly Button](doc/source/images/CreateAssembleButton.png)
+  <img src="doc/source/images/CreateAssembleButton.png" alt="Create Assembly Buttonn" width="40%">
 
-  - There will be a scroll bar near the middle of the screen. Scroll down to the Policies section and click and hold "Invoke".
+* There will be a scroll bar near the middle of the screen. Scroll down to the Policies section and click and hold "Invoke".
 
-  ![Invoke Button](doc/source/images/InvokeButton.png)
+![Invoke Button](doc/source/images/InvokeButton.png)
 
-  - Drag the invoke action to a place between the circles. A dotted box will appear where you can drop it.
+- Drag the invoke action to a place between the circles. A dotted box will appear where you can drop it.
 
-  ![Drag Invoke](doc/source/images/DragInvoke.png)
+![Drag Invoke](doc/source/images/DragInvoke.png)
 
-  - _After you drop it, the area will look like this picture below:_
+- _After you drop it, the area will look like this picture below:_
 
-  ![Invoke In Place](doc/source/images/InvokeInPlace.png)
+![Invoke In Place](doc/source/images/InvokeInPlace.png)
 
-  - Click the new "invoke" action. A list of options should appear on the right
+- Click the new "invoke" action. A list of options should appear on the right
 
-    - Modify the URL to be: **https://<span></span>host:port\$(request.path)**
+  - Modify the URL to be: **https://<span></span>host:port\$(request.path)**
 
-    - Scroll down to the HTTP method and select "Keep"
+  - Scroll down to the HTTP method and select "Keep"
 
-    ![Keep Method](doc/source/images/KeepMethod.png)
+  ![Keep Method](doc/source/images/KeepMethod.png)
 
-  - Add the API to a product </br> Click the three vertical dots (![Three Dots](doc/source/images/ThreeDots.png)) near the top right and a pop-up menu will appear. Choose "Add to existing products"
+- Add the API to a product </br> Click the three vertical dots (![Three Dots](doc/source/images/ThreeDots.png)) near the top right and a pop-up menu will appear. Choose "Add to existing products"
 
-  ![Add Existing Products](doc/source/images/AddExistingProducts.png)
+  <img src="doc/source/images/AddExistingProducts.png" alt="Add Existing Products" width="40%">
 
-  - A new menu will appear entitled "Add to existing products". Click the check box next to the product name you created in earlier steps. The click "Add" (blue button at the bottom)
+- A new menu will appear entitled "Add to existing products". Click the check box next to the product name you created in earlier steps. The click "Add" (blue button at the bottom)
 
-  ![Select Product](doc/source/images/SelectProduct.png)
+  <img src="doc/source/images/SelectProduct.png" alt="Select Product" width="40%">
 
-  - Validate the API by clicking the circle with a checkbox (![Circle Checkbox](doc/source/images/CircleCheckBox.png)) near the top right of the screen. </br> A message should appear that says "Validation Complete"
+- Validate the API by clicking the circle with a checkbox (![Circle Checkbox](doc/source/images/CircleCheckBox.png)) near the top right of the screen. </br> A message should appear that says "Validation Complete"
 
-  ![Validation Complete](doc/source/images/ValidationComplete.png)
+![Validation Complete](doc/source/images/ValidationComplete.png)
 
-  - Save the API by clicking the save icon (![Save Icon](doc/source/images/SaveIcon.png))
+- Save the API by clicking the save icon (![Save Icon](doc/source/images/SaveIcon.png))
 
 - Test the API
 
