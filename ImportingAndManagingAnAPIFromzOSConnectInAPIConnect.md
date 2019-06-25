@@ -46,7 +46,7 @@ Below is a pictorial view of z/OS Connect and API Connect working together. The 
 
   - Add a new product by clicking the "Add" button
 
-  <img src="doc/source/images/AddButton.png" alt="Add Button" width="40%">
+  <img src="doc/source/images/AddButton.png" alt="Add Button" width="30%">
 
   - A "New Product" menu screen should appear. Enter a title and click "Create Product"
 
