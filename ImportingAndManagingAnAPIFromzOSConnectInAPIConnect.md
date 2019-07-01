@@ -115,7 +115,10 @@ Below is a pictorial view of z/OS Connect and API Connect working together. The 
 
   ![Keep Method](doc/source/images/KeepMethod.png)
 
-- Add the API to a product </br> Click “Design” at the top left.  (![Design](doc/source/images/Design.png))</br> Click the three vertical dots (![Three Dots](doc/source/images/ThreeDots.png)) near the top right and a pop-up menu will appear. Choose "Add to existing products"
+- Add the API to a product 
+  </br> Click “Design” at the top left.  
+  (![Design](doc/source/images/Design.png))</br> 
+  Click the three vertical dots (![Three Dots](doc/source/images/ThreeDots.png)) near the top right and a pop-up menu will appear. Choose "Add to existing products"
 
   <img src="doc/source/images/AddExistingProducts.png" alt="Add Existing Products" width="40%">
 
