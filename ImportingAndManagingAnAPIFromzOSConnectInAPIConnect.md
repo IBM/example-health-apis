@@ -5,7 +5,7 @@
 This part assumes that an API has been created using z/OS Connect. The requirements for managing the API using API Connect are:
 
 1. An IBM Cloud Account
-2. The API Connect Feature enabled on the IBM Could Account
+2. The API Connect Feature enabled on the IBM Cloud Account
 3. Access to the API description file (swagger.json) associated with the API or the URL and credentials to reach the API description document online.
 
 ## Background
@@ -115,7 +115,7 @@ Below is a pictorial view of z/OS Connect and API Connect working together. The 
 
   ![Keep Method](doc/source/images/KeepMethod.png)
 
-- Add the API to a product </br> Click the three vertical dots (![Three Dots](doc/source/images/ThreeDots.png)) near the top right and a pop-up menu will appear. Choose "Add to existing products"
+- Add the API to a product </br> Click “Design” at the top left.  (![Design](doc/source/images/Design.png))</br> Click the three vertical dots (![Three Dots](doc/source/images/ThreeDots.png)) near the top right and a pop-up menu will appear. Choose "Add to existing products"
 
   <img src="doc/source/images/AddExistingProducts.png" alt="Add Existing Products" width="40%">
 
@@ -129,9 +129,9 @@ Below is a pictorial view of z/OS Connect and API Connect working together. The 
 
 - Save the API by clicking the save icon (<img src="doc/source/images/SaveIcon.png" alt="Save Icon" width="3%">)
 
-- Test the API
+- Test the API Internally before Publishing
 
-  - Click the trianfle above the Invoke box
+  - Click the triangle above the Invoke box
 
   ![PlayButton](doc/source/images/PlayButton.png)
 
@@ -173,7 +173,7 @@ Below is a pictorial view of z/OS Connect and API Connect working together. The 
 
   - To get to the portal, click the gear icon (<img src="doc/source/images/GearIcon.png" alt="Gear Icon" width="4%">) then choose "Portal" on the left.
 
-    - If you hace not created on yet, you can do so now.
+    - If you have not created one yet, you can do so now.
 
   - Open your instance of the Developer Portal (click the URL)
 
