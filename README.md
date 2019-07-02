@@ -6,18 +6,18 @@ This code pattern shows you how to expose data from a DB2 database and a CICS ap
 
 This work was done as part of the Summit Health set of code patterns, which demonstrate how cloud technology can access data stored on z/OS Systems. We needed a way to access the large amounts of data stored on a DB2 database and a CICS application. We used z/OS Connect and API Connect to expose the data through REST APIs. z/OS Connect provides a single, common way to unleash your existing market-differentiating assets on IBM with RESTful APIs. API Connect allows automated API creation, simple discovery of assets, self-service access for developers, and built-in security and governance. z/OS Connect was used first to expose the data from DB2 and CICS as REST APIs. Then API Connect was used to create a way for developers to easily access the APIs through an intuitive portal.
 
-**This code pattern is for people with an intermediate understanding and experience working with Z Systems, z/OS and Eclipse tools like IBM Explorer for z/OS.**
+**This code pattern is for people with an intermediate level understanding and experience working with Z Systems, z/OS and Eclipse tools like IBM Explorer for z/OS.**
 
 When the reader has completed this code pattern, they will understand how to:
 
-- Use z/OS Connect to expose CICS and DB2 Data with REST APIs
+- Use z/OS Connect to expose CICS Application(s) and DB2 Data with REST APIs
 - Use API Connect to manage your APIs and create a portal for developers to access them
 
 If you have any questions please email **Kenishia Callaway** at: **kenishia@us.ibm.com**
 
 ### Pre-requisites
 
-- In order to create a DB2 RESTful service, the system pre-requisite is to have DB2 v11 or v12 with associated PTFs for REST API support. (Info on APARs here:<br/> http://www-01.ibm.com/support/docview.wss?uid=isg1II14827 )
+- In order to create a DB2 REST service, the system pre-requisite is to have DB2 v11 or v12 with associated PTFs for REST API support. (Info on APARs here:<br/> http://www-01.ibm.com/support/docview.wss?uid=isg1II14827 )
 
 - You must have a supported version of CICS Transaction Server for z/OS (Currently V5.2 or above).
 
@@ -25,13 +25,13 @@ If you have any questions please email **Kenishia Callaway** at: **kenishia@us.i
 
 - The API Creator will also need to have some sort of REST client tool. That can be in the form of a browser plug-in (such as Rest Client for Firefox or Advanced Rest Client for Chrome) or a desktop tool such as Postman or CuRL.
 
-- The service creator will need the **z/OS Connect Build Toolkit** for the .sar file generation for Db2 services. <br/> The build toolkit is packaged as a zip file and can be obtained from your z/OS Connect product installation directory or here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
+- The service creator will need the **z/OS Connect Build Toolkit** for the .sar file generation for Db2 services. <br/> The build toolkit is packaged as a zip file named zconbt.zip and can be obtained from either the z/OS Connect product installation directory or here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
 
 - The API Connect environment used in this code pattern is hosted on IBM Cloud. An IBM Cloud account will be required.
 
 ## Flow
 
-This is how your APIs will be routed from your backend systems to a developer friendly portal.
+This is how APIs will be routed from the backend systems to a developer friendly portal.
 
 ![Flow Diagram](doc/source/images/FlowDiagram.png)
 
@@ -56,17 +56,17 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
 - The source code is included in the [HCAZ_Source](HCAZ_Source) folder.
 
-- The source code includes JCL files to install the application. Some changes may need to be made to the JCL depending on your installation. If you have any questions ask your organization's z/OS System Programmer or a z/OS System Administrator.
+- The source code includes JCL files to install the application. Some changes may need to be made to the JCL to match the target installation. If you have any questions, ask your organization's z/OS System Programmer or a z/OS System Administrator.
 
 ## 2. Create the DB2 database and tables
 
 - Assumptions/Prerequisites
 
-  - You have DB2 v12 on z/OS (or DB2 v11 with REST enablement PTFs)
+  - DB2 v12 on z/OS (or DB2 v11 with REST enablement PTFs)
 
-  - You have administrative authority to create database elements
+  - Administrative authority to create database elements
 
-  - You have knowledge of database and table creation commands
+  - Knowledge of database and table creation commands
 
 - Pre-work:
 
@@ -91,20 +91,14 @@ This is how your APIs will be routed from your backend systems to a developer fr
   |   ALLERGIES   |                                              List of any allergies a patient has and when they were diagnosed                                              |
   | OBSERVATIONS  | Log of patient measurements (such as height and weight), lab results (like cholesterol and blood sugar) and questionnaire answers (such as smoking status) |
 
-- Seven (7) of the tables are used in the Web Interface:
+- Seven (7) of the tables are used in the Web Interface / REST API Calls:
 
   - PATIENT
-
   - USER
-
   - MEDICATION
-
   - PRESCRIPTION
-
   - APPOINTMENTS
-
   - ALLERGIES
-
   - OBSERVATIONS
 
 - Create the tables for the functions that will be implemented in the Healthcare system.
