@@ -19,13 +19,13 @@ If you have any questions please email **Kenishia Callaway** at: **kenishia@us.i
 
 - In order to create a DB2 RESTful service, the system pre-requisite is to have DB2 v11 or v12 with associated PTFs for REST API support. (Info on APARs here:<br/> http://www-01.ibm.com/support/docview.wss?uid=isg1II14827 )
 
-- You must have a supported version of CICS Transaction Server.
+- You must have a supported version of CICS Transaction Server for z/OS (Currently V5.2 or above).
 
 - The Service and API Creator will need the z/OS Connect API Toolkit for service (.sar) file generation of CICS services and API (.aar) file generation for CICS and DB2 APIs.
 
 - The API Creator will also need to have some sort of REST client tool. That can be in the form of a browser plug-in (such as Rest Client for Firefox or Advanced Rest Client for Chrome) or a desktop tool such as Postman or CuRL.
 
-- The service creator will need the **z/OS Connect Build Toolkit** for the .sar file generation for Db2 services. This tool can be run either on the mainframe (omvs) or in a Windows command interface. These instructions do so on Windows. <br/> The build toolkit is packaged as a zip file and can be obtained from your z/OS Connect product installation directory or here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
+- The service creator will need the **z/OS Connect Build Toolkit** for the .sar file generation for Db2 services. This tool can be run either on the mainframe (omvs) or in a Windows command interface. This code pattern includes examples using the tool on Windows. <br/> The build toolkit is packaged as a zip file and can be obtained from your z/OS Connect product installation directory or here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
 
 - The API Connect environment used in this code pattern is hosted on IBM Cloud. An IBM Cloud account will be required.
 
@@ -48,7 +48,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
 5. [Expose DB2 data through z/OS Connect](#5-expose-db2-data-through-zos-connect)
 6. [Expose CICS Application through z/OS Connect](#6-expose-cics-application-data-through-zos-connect)
 7. [Create API Connect Instance](#7-create-api-connect-instance)
-8. [Importing and Managing an API from z/OS Connect in API Connect](#8-importing-and-managing-an-api-from-zos-connect-in-api-connect)
+8. [Import and Manage z/OS Connect API in API Connect](#8-importing-and-managing-an-api-from-zos-connect-in-api-connect)
 
 ## 1. Create CICS Application
 
@@ -155,6 +155,6 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
   ![Creating an API Connect Instance](doc/source/images/CreatAPIConnectInstance.gif)
 
-## 8. Importing and Managing an API from z/OS Connect in API Connect
+## 8. Import and Manage a z/OS Connect API in API Connect
 
 - [Click this link to go to the steps for Importing and Managing an API from z/OS Connect in API Connect](ImportingAndManagingAnAPIFromzOSConnectInAPIConnect.md)
