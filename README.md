@@ -23,9 +23,9 @@ If you have any questions please email **Kenishia Callaway** at: **kenishia@us.i
 
 - The Service and API Creator will need the z/OS Connect API Toolkit for service (.sar) file generation of CICS services and API (.aar) file generation for CICS and DB2 APIs.
 
-- The API Creator will also need to have some sort of REST client tool. That can be in the form of a browser plug-in (such as Rest Client for Firefox or Advanced Rest Client for Chrome) or a desktop tool such as Postman or CuRL.
+- The API Creator will also need to have some sort of REST client tool. That can be in the form of a browser plug-in (such as RESTClient for Firefox or Advanced Rest Client for Chrome) or a desktop tool such as Postman or CuRL.
 
-- The service creator will need the **z/OS Connect Build Toolkit** for the .sar file generation for Db2 services. <br/> The build toolkit is packaged as a zip file named zconbt.zip and can be obtained from either the z/OS Connect product installation directory or here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
+- The service creator will need the **z/OS Connect Build Toolkit** for the .sar file generation for Db2 services. <br/> The build toolkit is packaged as a zip file named zconbt.zip and can be obtained from either the z/OS Connect product installation directory or at the following link: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
 
 - The API Connect environment used in this code pattern is hosted on IBM Cloud. An IBM Cloud account will be required.
 
