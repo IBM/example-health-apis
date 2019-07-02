@@ -25,7 +25,7 @@ If you have any questions please email **Kenishia Callaway** at: **kenishia@us.i
 
 - The API Creator will also need to have some sort of REST client tool. That can be in the form of a browser plug-in (such as Rest Client for Firefox or Advanced Rest Client for Chrome) or a desktop tool such as Postman or CuRL.
 
-- The service creator will need the **z/OS Connect Build Toolkit** for the .sar file generation for Db2 services. This tool can be run either on the mainframe (omvs) or in a Windows command interface. This code pattern includes examples using the tool on Windows. <br/> The build toolkit is packaged as a zip file and can be obtained from your z/OS Connect product installation directory or here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
+- The service creator will need the **z/OS Connect Build Toolkit** for the .sar file generation for Db2 services. <br/> The build toolkit is packaged as a zip file and can be obtained from your z/OS Connect product installation directory or here: <br/> https://developer.ibm.com/mainframe/zos-connect-ee-build-toolkit/
 
 - The API Connect environment used in this code pattern is hosted on IBM Cloud. An IBM Cloud account will be required.
 
@@ -111,7 +111,7 @@ This is how your APIs will be routed from your backend systems to a developer fr
 
   - The tables should be created in the table space that was defined to contain the Healthcare tables
 
-  - Once the database and tables are created, a BIND needs to take place to connect the CICS application and the database.
+  - Once the database and tables are created, a BIND needs to take place to connect the CICS application and the database. (Consult your CICS Administrator to perform this action.)
 
 - The commands for creating the database tables are listed in this [PDF](doc/source/CreateTableStatements.pdf)
 
