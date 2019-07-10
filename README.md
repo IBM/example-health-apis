@@ -46,9 +46,9 @@ This is how APIs will be routed from the backend systems to a developer friendly
 3. [Populate DB2 database with Synthea data](#3-populate-db2-database-with-synthea-data)
 4. [Install z/OS Connect](#4-install-zos-connect)
 5. [Expose DB2 data through z/OS Connect](#5-expose-db2-data-through-zos-connect)
-6. [Expose CICS Application through z/OS Connect](#6-expose-cics-application-data-through-zos-connect)
+6. [Expose CICS Application through z/OS Connect](#6-expose-cics-application-through-zos-connect)
 7. [Create API Connect Instance](#7-create-api-connect-instance)
-8. [Import and Manage z/OS Connect API in API Connect](#8-importing-and-managing-an-api-from-zos-connect-in-api-connect)
+8. [Import and Manage z/OS Connect API in API Connect](#8-import-and-manage-a-zos-connect-api-in-api-connect)
 
 ## 1. Create CICS Application
 
