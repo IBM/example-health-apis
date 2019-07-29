@@ -1,27 +1,27 @@
 # **CODE PATTERN IN PROGRESS.<br/> DO NOT TRY TO COMPLETE!!!**
 
-# z/OS Connect & API Connect Code Pattern for Summit Health
+# z/OS Connect & API Connect Code Pattern for Example Health
 
-This code pattern shows you how to expose data from a DB2 database and a CICS application through z/OS Connect and then create APIs to access that data with API Connect.
+This code pattern shows you how to expose data from a Db2 database and a CICS application through z/OS Connect and then create APIs to access that data with API Connect.
 
-This work was done as part of the Summit Health set of code patterns, which demonstrate how cloud technology can access data stored on z/OS Systems. We needed a way to access the large amounts of data stored on a DB2 database and a CICS application. We used z/OS Connect and API Connect to expose the data through REST APIs. z/OS Connect provides a single, common way to unleash your existing market-differentiating assets on IBM with RESTful APIs. API Connect allows automated API creation, simple discovery of assets, self-service access for developers, and built-in security and governance. z/OS Connect was used first to expose the data from DB2 and CICS as REST APIs. Then API Connect was used to create a way for developers to easily access the APIs through an intuitive portal.
+This work was done as part of the Example Health set of code patterns, which demonstrate how cloud technology can access data stored on z/OS Systems. We needed a way to access the large amounts of data stored on a Db2 database and a CICS application. We used z/OS Connect and API Connect to expose the data through REST APIs. z/OS Connect provides a single, common way to unleash your existing market-differentiating assets on IBM with RESTful APIs. API Connect allows automated API creation, simple discovery of assets, self-service access for developers, and built-in security and governance. z/OS Connect was used first to expose the data from Db2 and CICS as REST APIs. Then API Connect was used to create a way for developers to easily access the APIs through an intuitive portal.
 
 **This code pattern is for people with an intermediate level understanding and experience working with Z Systems, z/OS and Eclipse tools like IBM Explorer for z/OS.**
 
 When the reader has completed this code pattern, they will understand how to:
 
-- Use z/OS Connect to expose CICS Application(s) and DB2 Data with REST APIs
+- Use z/OS Connect to expose CICS Application(s) and Db2 Data with REST APIs
 - Use API Connect to manage your APIs and create a portal for developers to access them
 
 If you have any questions please email **Kenishia Callaway** at: **kenishia@us.ibm.com**
 
 ### Pre-requisites
 
-- In order to create a DB2 REST service, the system pre-requisite is to have DB2 v11 or v12 with associated PTFs for REST API support. (Info on APARs here:<br/> http://www-01.ibm.com/support/docview.wss?uid=isg1II14827 )
+- In order to create a Db2 REST service, the system pre-requisite is to have Db2 v11 or v12 with associated PTFs for REST API support. (Info on APARs here:<br/> http://www-01.ibm.com/support/docview.wss?uid=isg1II14827 )
 
 - You must have a supported version of CICS Transaction Server for z/OS (Currently V5.2 or above).
 
-- The Service and API Creator will need the z/OS Connect API Toolkit for service (.sar) file generation of CICS services and API (.aar) file generation for CICS and DB2 APIs.
+- The Service and API Creator will need the z/OS Connect API Toolkit for service (.sar) file generation of CICS services and API (.aar) file generation for CICS and Db2 APIs.
 
 - The API Creator will also need to have some sort of REST client tool. That can be in the form of a browser plug-in (such as RESTClient for Firefox or Advanced Rest Client for Chrome) or a desktop tool such as Postman or CuRL.
 
@@ -35,17 +35,17 @@ This is how APIs will be routed from the backend systems to a developer friendly
 
 ![Flow Diagram](doc/source/images/FlowDiagram.png)
 
-1. z/OS Connect exposes the DB2 data through REST APIs
+1. z/OS Connect exposes the Db2 data through REST APIs
 2. z/OS Connect exposes the CICS application programs/data through REST APIs
 3. API Connect serves as a gateway to z/OS Connect, manages the z/OS Connect APIs and establishes a portal for developers to gain access to the APIs
 
 # Steps
 
 1. [Create CICS Application](#1-create-cics-application)
-2. [Create the DB2 database and tables](#2-create-the-db2-database-and-tables)
-3. [Populate DB2 database with Synthea data](#3-populate-db2-database-with-synthea-data)
+2. [Create the Db2 database and tables](#2-create-the-db2-database-and-tables)
+3. [Populate Db2 database with Synthea data](#3-populate-db2-database-with-synthea-data)
 4. [Install z/OS Connect](#4-install-zos-connect)
-5. [Expose DB2 data through z/OS Connect](#5-expose-db2-data-through-zos-connect)
+5. [Expose Db2 data through z/OS Connect](#5-expose-db2-data-through-zos-connect)
 6. [Expose CICS Application through z/OS Connect](#6-expose-cics-application-through-zos-connect)
 7. [Create API Connect Instance](#7-create-api-connect-instance)
 8. [Import and Manage z/OS Connect API in API Connect](#8-import-and-manage-a-zos-connect-api-in-api-connect)
@@ -58,11 +58,11 @@ This is how APIs will be routed from the backend systems to a developer friendly
 
 - The source code includes JCL files to install the application. Some changes may need to be made to the JCL to match the target installation. If you have any questions, ask your organization's z/OS System Programmer or a z/OS System Administrator.
 
-## 2. Create the DB2 database and tables
+## 2. Create the Db2 database and tables
 
 - Assumptions/Prerequisites
 
-  - DB2 v12 on z/OS (or DB2 v11 with REST enablement PTFs)
+  - Db2 v12 on z/OS (or Db2 v11 with REST enablement PTFs)
 
   - Administrative authority to create database elements
 
@@ -70,11 +70,11 @@ This is how APIs will be routed from the backend systems to a developer friendly
 
 - Pre-work:
 
-  - Create a database and table space within the DB2 z/OS subsystem
+  - Create a database and table space within the Db2 z/OS subsystem
 
-- DB2 Tables:
+- Db2 Tables:
 
-  - There are 12 tables that are used in the entire Summit Healthcare Application (CICS native and Web):
+  - There are 12 tables that are used in the entire Example Healthcare Application (CICS native and Web):
 
   |   **Table**   |                                                                      **Description**                                                                       |
   | :-----------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -109,9 +109,9 @@ This is how APIs will be routed from the backend systems to a developer friendly
 
 - The commands for creating the database tables are listed in this [PDF](doc/source/CreateTableStatements.pdf)
 
-## 3. Populate DB2 database with Synthea data
+## 3. Populate Db2 database with Synthea data
 
-- Visit this [code pattern](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/) for the instructions on populating your DB2 database with data from the Synthea tool
+- Visit this [code pattern](https://developer.ibm.com/patterns/transform-load-big-data-csv-files-db2-zos-database/) for the instructions on populating your Db2 database with data from the Synthea tool
 
 ## 4. Install z/OS Connect
 
@@ -119,9 +119,9 @@ This is how APIs will be routed from the backend systems to a developer friendly
 
   -This guide is also available on this site as a [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf). Go to page 8 for information on installation.
 
-## 5. Expose DB2 data through z/OS Connect
+## 5. Expose Db2 data through z/OS Connect
 
-- [Click this link to go to the steps for exposing DB2 data through z/OS Connect](ExposeDB2DataThroughzOSConnect.md)
+- [Click this link to go to the steps for exposing Db2 data through z/OS Connect](ExposeDB2DataThroughzOSConnect.md)
 
 ## 6. Expose CICS Application through z/OS Connect
 
