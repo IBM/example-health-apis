@@ -1,5 +1,3 @@
-# **CODE PATTERN IN PROGRESS.<br/> DO NOT TRY TO COMPLETE!!!**
-
 # z/OS Connect & API Connect Code Pattern for Example Health
 
 This code pattern shows you how to expose data from a Db2 database and a CICS application through z/OS Connect and then create APIs to access that data with API Connect.
