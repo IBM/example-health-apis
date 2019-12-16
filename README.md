@@ -31,7 +31,7 @@ If you have any questions please email **Kenishia Callaway** at: **kenishia@us.i
 
 This is how APIs will be routed from the backend systems to a developer friendly portal.
 
-![Flow Diagram](doc/source/images/FlowDiagram.png)
+![Flow Diagram](doc/source/images/flow.png)
 
 1. z/OS Connect exposes the Db2 data through REST APIs
 2. z/OS Connect exposes the CICS application programs/data through REST APIs
