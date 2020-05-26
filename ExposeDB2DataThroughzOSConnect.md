@@ -45,7 +45,7 @@
 
 * ## Creating a .sar file
 
-  - In order to turn your new service into an API using z/OS Connect, the service needs to have a Service Archive (.sar) file. The .sar file has the json request and response sechemas for the service as well as information about invoking it. <br/><br/> To create the .sar file for a DB2 service, the **z/OS Connect Build Toolkit** utility (**zconbt**) must be used. The utility can be installed on z/OS or on a Linux or Windows workstation. These instructions walk through using it on Windows.
+  - In order to turn your new service into an API using z/OS Connect, the service needs to have a Service Archive (.sar) file. The .sar file has the json request and response schemas for the service as well as information about invoking it. <br/><br/> To create the .sar file for a DB2 service, the **z/OS Connect Build Toolkit** utility (**zconbt**) must be used. The utility can be installed on z/OS or on a Linux or Windows workstation. These instructions walk through using it on Windows.
 
   - ### Installing the Build Toolkit
 
@@ -57,7 +57,7 @@
 
     - There are three files that are used by the build toolkit to create the .sar file - a properties file, a json request file and a json response file.
 
-      - The json request and json response files must be created manually. This is done by copying the json request and repsonse schema entries from the service description.
+      - The json request and json response files must be created manually. This is done by copying the json request and response schema entries from the service description.
 
       - The properties file can be created by copying a sample file and editing it.
 
@@ -91,7 +91,7 @@
       - _You can find a sample properties file in the \<path to zconbt>/samples/service folder. The correct one for DB2 rest service is named sample_restClient_sar.properties_
         ![Sample Propertiesf File Location](doc/source/images/SamplePropertiesFileLocation.png)
 
-      - If you are doing this for the firs time, **right click** on the **sample_restClient_sar.properties** file and choose **Open With**. It is recommended the you use WordPad (easiest method to view/edit).
+      - If you are doing this for the first time, **right click** on the **sample_restClient_sar.properties** file and choose **Open With**. It is recommended that you use WordPad (easiest method to view/edit).
 
       - In the sample file, definitions of the fields are listed.
         ![Editing the Sample Properties File](doc/source/images/EditingSamplePropertiesFile.png)
@@ -103,7 +103,7 @@
         - c. You can obtain portions of this value from your service URL that was called earlier during testing. Commonly, this would be /service/serviceName.
         - d. This value is your choice, but will also be used in the server.xml file.
 
-      - Chose **File** -> **Save As** and save the file with a new name. _Note the folder where you saved the file for use in the zconbt script._
+      - Choose **File** -> **Save As** and save the file with a new name. _Note the folder where you saved the file for use in the zconbt script._
         - _Note: Place this file in the same folder as the json files or include the path to the .json files in the properties file._
 
     - **Run the zconbt tool to generate the .sar file.**

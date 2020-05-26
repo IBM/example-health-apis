@@ -115,7 +115,7 @@ This is how APIs will be routed from the backend systems to a developer friendly
 
 - Please refer to the **Installation and Initial Setup** section of this handy [Getting Started Guide](https://www-03.ibm.com/support/techdocs/atsmastr.nsf/WebIndex/WP102724) on how to install z/OS Connect Enterprise Edition.
 
-  -This guide is also available on this site as a [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf). Go to page 8 for information on installation.
+  - This guide is also available on this site as a [PDF](doc/source/zOSConnectEEV3GettingStarted.pdf). Go to page 8 for information on installation.
 
 ## 5. Expose Db2 data through z/OS Connect Enterprise Edition
 
